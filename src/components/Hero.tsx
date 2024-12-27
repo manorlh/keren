@@ -18,8 +18,11 @@ export default function Hero() {
         />
       </div>
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/90 via-black/60 to-transparent z-10"></div>
+      {/* Dark Overlay - Mobile Only */}
+      <div className="absolute inset-0 bg-black/50 md:hidden z-10"></div>
+      
+      {/* Gradient Overlay - Mobile Only */}
+      <div className="absolute inset-x-0 bottom-0 h-[50vh] bg-gradient-to-t from-black via-black/80 to-transparent md:hidden z-10"></div>
 
       {/* Content */}
       <div className="container mx-auto px-4 md:px-6 relative z-20 pb-12 md:pb-0" dir="ltr">
