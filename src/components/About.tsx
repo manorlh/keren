@@ -13,24 +13,23 @@ export default function About() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto text-center"
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-8">About Our Practice</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-8">אודות המשרד</h2>
           <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-            With extensive experience in medical malpractice law, Keren Lahagani has dedicated her career 
-            to advocating for patients who have suffered due to medical negligence. Our firm combines deep 
-            medical knowledge with legal expertise to build strong cases for our clients.
+          משרדנו בעל נסיון רב בייצוג בתביעות רשלנות רפואית משרדנו ייצג בעבר את הנתבעים, המוסדות הרפואיים, בהם בתי החולים, קופות החולים ורופאים פרטיים. הדבר מהווה יתרון משמעותי בניהול ההליך המשפטי של התובע! שיתוף פעולה 
+          עם טובי המומחים הרפואיים בתחום לניתוח מעמיק של המקרה לצורך השגת פיצוי מקסימלי עבורכם. 
           </p>
           <div className="grid md:grid-cols-3 gap-8 mt-16">
             <div className="p-6 bg-gray-50 rounded-lg">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Specialized Expertise</h3>
-              <p className="text-gray-600">Focused exclusively on medical malpractice cases with proven results</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">ניסיון מהצד השני</h3>
+              <p className="text-gray-600">ייצוג קודם של מוסדות רפואיים מעניק לנו יתרון משמעותי בהבנת התיקים</p>
             </div>
             <div className="p-6 bg-gray-50 rounded-lg">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Medical Knowledge</h3>
-              <p className="text-gray-600">Deep understanding of medical procedures and standards of care</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">רשת מומחים</h3>
+              <p className="text-gray-600">שיתוף פעולה מתמשך עם טובי המומחים הרפואיים בתחומם בישראל</p>
             </div>
             <div className="p-6 bg-gray-50 rounded-lg">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">Client Support</h3>
-              <p className="text-gray-600">Compassionate guidance through complex medical legal cases</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">ניתוח מעמיק</h3>
+              <p className="text-gray-600">יכולת מוכחת בפיצוח תיקים מורכבים והבנת הליבה הרפואית של כל מקרה</p>
             </div>
           </div>
         </motion.div>

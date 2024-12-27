@@ -5,33 +5,33 @@ import { HeartIcon, BeakerIcon, UserGroupIcon, ClipboardDocumentCheckIcon, Build
 
 const practices = [
   {
-    title: 'Surgical Errors',
-    description: 'Representation for victims of surgical mistakes, wrong-site surgery, and post-operative negligence',
+    title: 'טעויות בניתוח',
+    description: 'ייצוג קורבנות של טעויות כירורגיות, ניתוח באיבר שגוי ורשלנות בטיפול שלאחר הניתוח',
     icon: HeartIcon,
   },
   {
-    title: 'Misdiagnosis',
-    description: 'Cases involving delayed, missed, or incorrect diagnosis of serious conditions',
+    title: 'אבחון שגוי',
+    description: 'תיקים הכוללים עיכוב באבחון, החמצת אבחון או אבחון שגוי של מצבים רפואיים',
     icon: ClipboardDocumentCheckIcon,
   },
   {
-    title: 'Birth Injuries',
-    description: 'Advocacy for families affected by negligence during pregnancy, labor, and delivery',
+    title: 'פגיעות בלידה',
+    description: 'סיוע למשפחות שנפגעו מרשלנות במהלך ההיריון, הלידה וההתאוששות',
     icon: UserGroupIcon,
   },
   {
-    title: 'Medication Errors',
-    description: 'Cases involving wrong medication, dosage errors, and dangerous drug interactions',
+    title: 'טעויות בתרופות',
+    description: 'תיקים הכוללים מתן תרופה שגויה, מינון שגוי ואינטראקציות מסוכנות בין תרופות',
     icon: BeakerIcon,
   },
   {
-    title: 'Hospital Negligence',
-    description: 'Claims against hospitals for systemic failures and negligent care',
+    title: 'רשלנות בית חולים',
+    description: 'תביעות נגד בתי חולים בגין כשלים מערכתיים וטיפול רשלני',
     icon: BuildingOfficeIcon,
   },
   {
-    title: 'Emergency Room Errors',
-    description: 'Cases involving ER mistakes, delayed treatment, and improper patient discharge',
+    title: 'טעויות במיון',
+    description: 'תיקים הכוללים טעויות בחדר מיון, עיכוב בטיפול ושחרור לא נכון של מטופלים',
     icon: ExclamationTriangleIcon,
   },
 ];
@@ -47,9 +47,9 @@ export default function PracticeAreas() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Areas of Focus</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">תחומי התמחות</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            We specialize in all types of medical malpractice cases, fighting for patients who have suffered due to healthcare negligence
+            אנו מתמחים בכל סוגי תיקי הרשלנות הרפואית, נלחמים עבור מטופלים שנפגעו מרשלנות בטיפול הרפואי
           </p>
         </motion.div>
 

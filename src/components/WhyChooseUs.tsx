@@ -5,20 +5,20 @@ import { CheckCircleIcon } from '@heroicons/react/24/outline';
 
 const reasons = [
   {
-    title: 'Medical Expertise',
-    description: 'Deep understanding of medical procedures, terminology, and standards of care to effectively evaluate your case.',
+    title: 'צוות מומחים',
+    description: 'צוות המשרד כולל מומחים בתחום הרפואי והמשפטי, המעניקים ייעוץ מקצועי ומקיף.',
   },
   {
-    title: 'Proven Track Record',
-    description: 'Successfully recovered millions in compensation for victims of medical malpractice.',
+    title: 'ניסיון מוכח',
+    description: 'שיעור הצלחה גבוה בתיקי רשלנות רפואית והשגת פיצויים משמעותיים עבור לקוחותינו.',
   },
   {
-    title: 'Expert Network',
-    description: 'Access to leading medical experts who help build strong cases and provide expert testimony.',
+    title: 'מומחים רפואיים',
+    description: 'שיתוף פעולה עם רופאים מומחים מובילים לצורך חוות דעת מקצועיות וייעוץ רפואי.',
   },
   {
-    title: 'No Recovery, No Fee',
-    description: 'We work on a contingency basis - you only pay if we win your case.',
+    title: 'שקיפות מלאה',
+    description: 'עבודה בשיטת שכר טרחה על בסיס הצלחה, ללא תשלום מראש.',
   },
 ];
 
@@ -34,9 +34,9 @@ export default function WhyChooseUs() {
           className="max-w-4xl mx-auto"
         >
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Why Choose Us</h2>
+            <h2 className="text-4xl font-bold mb-4">למה לבחור בנו</h2>
             <p className="text-xl text-gray-300">
-              Dedicated exclusively to medical malpractice law, we provide the specialized expertise your case needs
+              משרדנו מתמחה בתביעות רשלנות רפואית, עם צוות מקצועי המעניק מענה מקיף לכל מקרה
             </p>
           </div>
 
@@ -67,7 +67,7 @@ export default function WhyChooseUs() {
             className="mt-16 text-center"
           >
             <p className="text-2xl font-light italic text-gray-300">
-              "Fighting for justice when medical care falls short"
+              "מובילים בתחום תביעות הרשלנות הרפואית בישראל"
             </p>
           </motion.div>
         </motion.div>

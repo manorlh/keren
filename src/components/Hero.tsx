@@ -2,50 +2,59 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
-    <section className="relative h-screen flex items-center justify-center bg-gradient-to-r from-gray-900 to-black text-white">
-      <div className="absolute inset-0 bg-black/70 z-10"></div>
-      
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: 'url("/images/law-office.jpg")',
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      ></div>
+    <section className="relative min-h-screen flex items-end md:items-center overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/lawyer.jpg"
+          alt="תמונת עורכת דין"
+          fill
+          className="object-cover md:object-[15%_center] object-[65%_center]"
+          priority
+        />
+      </div>
 
-      <div className="container mx-auto px-6 relative z-20">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center"
-        >
-          <h1 className="text-5xl md:text-6xl font-bold mb-6">
-            Keren Lahagani
-            <span className="block text-2xl md:text-3xl mt-4 font-light">Medical Malpractice Attorney</span>
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-            Dedicated to Fighting for Victims of Medical Negligence. Your Health, Your Rights, Our Priority.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link 
-              href="#contact"
-              className="bg-gray-900 text-white px-8 py-4 rounded-md text-lg font-semibold hover:bg-black transition-colors duration-300"
-            >
-              Free Case Evaluation
-            </Link>
-            <Link 
-              href="#practice-areas"
-              className="bg-white text-gray-900 px-8 py-4 rounded-md text-lg font-semibold hover:bg-gray-100 transition-colors duration-300"
-            >
-              Learn More
-            </Link>
-          </div>
-        </motion.div>
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-black/90 via-black/60 to-transparent z-10"></div>
+
+      {/* Content */}
+      <div className="container mx-auto px-4 md:px-6 relative z-20 pb-12 md:pb-0" dir="ltr">
+        <div className="w-full md:w-auto md:max-w-xl lg:max-w-2xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1 className="text-3xl md:text-6xl font-bold mb-4 md:mb-6 text-right text-white drop-shadow-lg">
+              קרן להגאני
+              <span className="block text-lg md:text-3xl mt-2 md:mt-4 font-light">משרד עורכי דין מוביל לרשלנות רפואית</span>
+            </h1>
+            <p className="text-base md:text-2xl mb-3 md:mb-4 text-right text-white drop-shadow-lg">
+              משרדנו מתמחה בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי ומימוש זכויותיכם
+            </p>
+            <p className="text-sm md:text-xl mb-6 md:mb-8 text-gray-100 font-light text-right drop-shadow-lg">
+              מומחים לרשלנות רפואית - הקול שלך בבית משפט
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-start">
+              <Link 
+                href="#contact"
+                className="bg-gray-900/90 text-white px-6 md:px-8 py-3 md:py-4 rounded-md text-base md:text-lg font-semibold hover:bg-black transition-colors duration-300 text-center sm:text-right backdrop-blur-sm"
+              >
+                לייעוץ ראשוני ללא עלות
+              </Link>
+              <Link 
+                href="#practice-areas"
+                className="bg-white/90 text-gray-900 px-6 md:px-8 py-3 md:py-4 rounded-md text-base md:text-lg font-semibold hover:bg-white transition-colors duration-300 text-center sm:text-right backdrop-blur-sm"
+              >
+                תחומי התמחות
+              </Link>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

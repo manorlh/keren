@@ -16,7 +16,7 @@ export default function MobileNav() {
       <button
         onClick={toggleMenu}
         className="p-2 text-gray-600 hover:text-gray-900"
-        aria-label="Toggle menu"
+        aria-label="תפריט"
       >
         {isOpen ? (
           <XMarkIcon className="h-6 w-6" />
@@ -42,7 +42,7 @@ export default function MobileNav() {
                     className="block text-gray-600 hover:text-gray-900"
                     onClick={toggleMenu}
                   >
-                    About
+                    אודות
                   </a>
                 </li>
                 <li>
@@ -51,7 +51,7 @@ export default function MobileNav() {
                     className="block text-gray-600 hover:text-gray-900"
                     onClick={toggleMenu}
                   >
-                    Practice Areas
+                    תחומי התמחות
                   </a>
                 </li>
                 <li>
@@ -60,7 +60,7 @@ export default function MobileNav() {
                     className="block text-gray-600 hover:text-gray-900"
                     onClick={toggleMenu}
                   >
-                    Why Choose Us
+                    למה אנחנו
                   </a>
                 </li>
                 <li>
@@ -69,7 +69,7 @@ export default function MobileNav() {
                     className="inline-block bg-gray-900 text-white px-6 py-2 rounded-md hover:bg-black transition-colors duration-300"
                     onClick={toggleMenu}
                   >
-                    Contact Us
+                    צור קשר
                   </a>
                 </li>
               </ul>
