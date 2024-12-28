@@ -13,21 +13,20 @@ const rubik = Rubik({
 export const metadata: Metadata = {
   title: 'קרן להגאני - משרד עורכי דין',
   description: 'מומחים בתביעות רשלנות רפואית',
+  metadataBase: new URL('https://keren-tau.vercel.app'),
   openGraph: {
     title: 'קרן להגאני - משרד עורכי דין מוביל לרשלנות רפואית',
     description: 'משרדנו מתמחה בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי ומימוש זכויותיכם',
-    url: 'https://www.kerenlahagani.co.il',
+    url: '/',
     siteName: 'קרן להגאני - משרד עורכי דין',
     locale: 'he_IL',
     type: 'website',
-    images: [
-      {
-        url: '/images/lawyer.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'קרן להגאני - משרד עורכי דין מוביל לרשלנות רפואית',
-      }
-    ],
+    images: [{
+      url: '/images/lawyer.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'קרן להגאני - משרד עורכי דין מוביל לרשלנות רפואית',
+    }],
   },
   twitter: {
     card: 'summary_large_image',
@@ -36,7 +35,7 @@ export const metadata: Metadata = {
     images: ['/images/lawyer.jpg'],
   },
   alternates: {
-    canonical: 'https://www.kerenlahagani.co.il'
+    canonical: '/'
   }
 };
 
