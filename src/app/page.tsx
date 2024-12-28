@@ -1,5 +1,3 @@
-import { motion } from 'framer-motion';
-import { GavelIcon, ScaleIcon, UserGroupIcon, BuildingOffice2Icon } from '@heroicons/react/24/outline';
 import Hero from '@/components/Hero';
 import About from '@/components/About';
 import PracticeAreas from '@/components/PracticeAreas';

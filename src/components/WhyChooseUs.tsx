@@ -67,7 +67,7 @@ export default function WhyChooseUs() {
             className="mt-16 text-center"
           >
             <p className="text-2xl font-light italic text-gray-300">
-              "מובילים בתחום תביעות הרשלנות הרפואית בישראל"
+              מובילים בתחום תביעות הרשלנות הרפואית בישראל
             </p>
           </motion.div>
         </motion.div>

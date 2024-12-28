@@ -2,6 +2,7 @@ import './globals.css';
 import { Rubik } from 'next/font/google';
 import MobileNav from '@/components/MobileNav';
 import Footer from '@/components/Footer';
+import Link from "next/link";
 
 const rubik = Rubik({ 
   subsets: ['latin', 'hebrew'],
@@ -24,9 +25,9 @@ export default function RootLayout({
         <header className="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
           <nav className="container mx-auto px-6 py-4">
             <div className="flex items-center justify-between">
-              <a href="/" className="text-2xl font-bold text-gray-900">
+            <Link href="/" className="text-2xl font-bold text-gray-900">
                 קרן להגאני
-              </a>
+              </Link>
               <div className="hidden md:flex items-center space-x-8">
                 <a href="#about" className="text-gray-600 hover:text-gray-900">אודות</a>
                 <a href="#practice-areas" className="text-gray-600 hover:text-gray-900">תחומי התמחות</a>
