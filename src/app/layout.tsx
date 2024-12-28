@@ -3,15 +3,41 @@ import { Rubik } from 'next/font/google';
 import MobileNav from '@/components/MobileNav';
 import Footer from '@/components/Footer';
 import Link from "next/link";
+import type { Metadata } from 'next';
 
 const rubik = Rubik({ 
   subsets: ['latin', 'hebrew'],
   weight: ['300', '400', '500', '600', '700'],
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'קרן להגאני - משרד עורכי דין',
   description: 'מומחים בתביעות רשלנות רפואית',
+  openGraph: {
+    title: 'קרן להגאני - משרד עורכי דין מוביל לרשלנות רפואית',
+    description: 'משרדנו מתמחה בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי ומימוש זכויותיכם',
+    url: 'https://www.kerenlahagani.co.il',
+    siteName: 'קרן להגאני - משרד עורכי דין',
+    locale: 'he_IL',
+    type: 'website',
+    images: [
+      {
+        url: '/images/lawyer.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'קרן להגאני - משרד עורכי דין מוביל לרשלנות רפואית',
+      }
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'קרן להגאני - משרד עורכי דין מוביל לרשלנות רפואית',
+    description: 'משרדנו מתמחה בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי ומימוש זכויותיכם',
+    images: ['/images/lawyer.jpg'],
+  },
+  alternates: {
+    canonical: 'https://www.kerenlahagani.co.il'
+  }
 };
 
 export default function RootLayout({
