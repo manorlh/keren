@@ -51,7 +51,8 @@ export default function RootLayout({
           <nav className="container mx-auto px-6 py-3">
             <div className="flex items-center justify-between">
               <Link href="/" className="flex items-center">
-                <Image src="/images/logo.webp" alt="קרן להגאני - משרד עורכי דין" className="h-10 w-auto" />
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/images/logo.webp" alt="קרן להגאני - משרד עורכי דין" className="h-10 w-auto" />
               </Link>
               <div className="hidden md:flex items-center gap-8">
                 <a href="#about" className="text-gray-600 hover:text-gray-900">אודות</a>
