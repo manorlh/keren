@@ -39,7 +39,7 @@ export default function About() {
             </div>
             <div className="p-6 bg-gray-50 rounded-lg">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">שכר טרחת עו״ד על בסיס הצלחה בלבד</h3>
-              <p className="text-gray-600">תשלום דמי שכר הטרחה בסוף ההליך ומהצלחה בלבד. ללא תשלום שכ"ט מראש או דמי פתיחת
+              <p className="text-gray-600">{'תשלום דמי שכר הטרחה בסוף ההליך ומהצלחה בלבד. ללא תשלום שכ"ט מראש או דמי פתיחת'}
                 תיק
               </p>
             </div>
