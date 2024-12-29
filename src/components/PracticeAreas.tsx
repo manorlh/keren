@@ -1,7 +1,13 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { HeartIcon, BeakerIcon, UserGroupIcon, ClipboardDocumentCheckIcon, BuildingOfficeIcon, ExclamationTriangleIcon } from '@heroicons/react/24/outline';
+import {motion} from 'framer-motion';
+import {
+  BeakerIcon,
+  BuildingOfficeIcon,
+  ClipboardDocumentCheckIcon,
+  HeartIcon,
+  UserGroupIcon
+} from '@heroicons/react/24/outline';
 
 const practices = [
   {
