@@ -1,11 +1,11 @@
 import './globals.css';
-import { Rubik } from 'next/font/google';
+import {Rubik} from 'next/font/google';
 import MobileNav from '@/components/MobileNav';
 import Footer from '@/components/Footer';
 import Link from "next/link";
-import type { Metadata } from 'next';
-import Image from 'next/image';
-const rubik = Rubik({ 
+import type {Metadata} from 'next';
+
+const rubik = Rubik({
   subsets: ['latin', 'hebrew'],
   weight: ['300', '400', '500', '600', '700'],
 });

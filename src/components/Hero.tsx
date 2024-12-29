@@ -26,32 +26,32 @@ export default function Hero() {
 
       {/* Content */}
       <div className="container mx-auto px-4 md:px-6 relative z-20 pb-12 md:pb-0" dir="ltr">
-        <div className="w-full md:w-auto md:max-w-xl lg:max-w-2xl">
+        <div className="w-full md:w-[35%] lg:w-auto lg:max-w-xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-3xl md:text-6xl font-bold mb-4 md:mb-6 text-right text-white drop-shadow-lg">
+            <h1 className="text-2xl sm:text-3xl lg:text-6xl font-bold mb-3 lg:mb-6 text-right text-white drop-shadow-lg">
               קרן להגאני
-              <span className="block text-lg md:text-3xl mt-2 md:mt-4 font-light">משרד עו״ד מוביל לרשלנות רפואית</span>
+              <span className="block text-base sm:text-lg lg:text-3xl mt-2 lg:mt-4 font-light">משרד עו״ד מוביל לרשלנות רפואית</span>
             </h1>
-            <p className="text-base md:text-2xl mb-3 md:mb-4 text-right text-white drop-shadow-lg">
+            <p className="text-sm sm:text-base lg:text-2xl mb-2 lg:mb-4 text-right text-white drop-shadow-lg">
               משרדנו מתמחה בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי
             </p>
-            <p className="text-sm md:text-xl mb-6 md:mb-8 text-gray-100 font-light text-right drop-shadow-lg">
+            <p className="text-xs sm:text-sm lg:text-xl mb-4 lg:mb-8 text-gray-100 font-light text-right drop-shadow-lg">
               מומחים לרשלנות רפואית ונזקי גוף - הקול שלכם בבית משפט
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-start">
+            <div className="flex flex-col sm:flex-row gap-2 lg:gap-4 justify-start">
               <Link 
                 href="#contact"
-                className="bg-gray-900/90 text-white px-6 md:px-8 py-3 md:py-4 rounded-md text-base md:text-lg font-semibold hover:bg-black transition-colors duration-300 text-center sm:text-right backdrop-blur-sm"
+                className="bg-gray-900/90 text-white px-3 sm:px-4 lg:px-8 py-1.5 sm:py-2 lg:py-4 rounded-md text-xs sm:text-sm lg:text-lg font-semibold hover:bg-black transition-colors duration-300 text-center sm:text-right backdrop-blur-sm"
               >
                 לייעוץ ראשוני ללא עלות
               </Link>
               <Link 
                 href="#practice-areas"
-                className="bg-white/90 text-gray-900 px-6 md:px-8 py-3 md:py-4 rounded-md text-base md:text-lg font-semibold hover:bg-white transition-colors duration-300 text-center sm:text-right backdrop-blur-sm"
+                className="bg-white/90 text-gray-900 px-3 sm:px-4 lg:px-8 py-1.5 sm:py-2 lg:py-4 rounded-md text-xs sm:text-sm lg:text-lg font-semibold hover:bg-white transition-colors duration-300 text-center sm:text-right backdrop-blur-sm"
               >
                 תחומי התמחות
               </Link>
