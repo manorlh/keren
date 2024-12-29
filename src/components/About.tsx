@@ -15,21 +15,39 @@ export default function About() {
         >
           <h2 className="text-4xl font-bold text-gray-900 mb-8">אודות המשרד</h2>
           <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-          משרדנו בעל נסיון רב בייצוג בתביעות רשלנות רפואית משרדנו ייצג בעבר את הנתבעים, המוסדות הרפואיים, בהם בתי החולים, קופות החולים ורופאים פרטיים. הדבר מהווה יתרון משמעותי בניהול ההליך המשפטי של התובע! שיתוף פעולה 
-          עם טובי המומחים הרפואיים בתחום לניתוח מעמיק של המקרה לצורך השגת פיצוי מקסימלי עבורכם. 
+          משרדנו בעל ניסיון רב בייצוג בתביעות רשלנות רפואית ונזקי גוף עם רזומה עשיר של הצלחות.
           </p>
           <div className="grid md:grid-cols-3 gap-8 mt-16">
             <div className="p-6 bg-gray-50 rounded-lg">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">ניסיון מהצד השני</h3>
-              <p className="text-gray-600">ייצוג קודם של מוסדות רפואיים מעניק לנו יתרון משמעותי בהבנת התיקים</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">ניסיון בייצוג מהצד השני</h3>
+              <p className="text-gray-600">יייצוג קודם של המוסדות הרפואיים, הרופאים, חברות הביטוח, מעניק לו יתרון
+                משמעותי בניהול התיק</p>
             </div>
             <div className="p-6 bg-gray-50 rounded-lg">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">רשת מומחים</h3>
-              <p className="text-gray-600">שיתוף פעולה מתמשך עם טובי המומחים הרפואיים בתחומם בישראל</p>
+              <p className="text-gray-600">שיתוף פעולה מתמשך עם טובי המומחים הרפואיים בישראל</p>
             </div>
             <div className="p-6 bg-gray-50 rounded-lg">
               <h3 className="text-xl font-semibold text-gray-900 mb-4">ניתוח מעמיק</h3>
-              <p className="text-gray-600">יכולת מוכחת בפיצוח תיקים מורכבים והבנת הליבה הרפואית של כל מקרה</p>
+              <p className="text-gray-600">יכולת מוכחת בפיצוח תיקים מורכבים והבנת הליבה הרפואית והמשפטית של כל מקרה
+                ומקרה</p>
+            </div>
+            <div className="p-6 bg-gray-50 rounded-lg">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">ייצוג משפטי וליווי אישי</h3>
+              <p className="text-gray-600">להשלים
+                ומקרה</p>
+            </div>
+            <div className="p-6 bg-gray-50 rounded-lg">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">שכר טרחת עו״ד על בסיס הצלחה בלבד</h3>
+              <p className="text-gray-600">תשלום דמי שכר הטרחה בסוף ההליך ומהצלחה בלבד. ללא תשלום שכ"ט מראש או דמי פתיחת
+                תיק
+              </p>
+            </div>
+            <div className="p-6 bg-gray-50 rounded-lg">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">מימון</h3>
+              <p className="text-gray-600">שיתוף פעולה עם חברות מימון בהעדר יכולת כלכלית לשאת בעלות חוות הדעת הרפואיות הדרושות לניהול ההליך
+                תיק
+              </p>
             </div>
           </div>
         </motion.div>

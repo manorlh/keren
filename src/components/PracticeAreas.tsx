@@ -6,17 +6,22 @@ import { HeartIcon, BeakerIcon, UserGroupIcon, ClipboardDocumentCheckIcon, Build
 const practices = [
   {
     title: 'טעויות בניתוח',
-    description: 'ייצוג קורבנות של טעויות כירורגיות, ניתוח באיבר שגוי ורשלנות בטיפול שלאחר הניתוח',
+    description: 'ייצוג קורבנות של טעויות כירורגיות, בניתוחים כירורגים, אורתופדים, גניקולוגים, פלסטיים, אורולוגים, לבביים ועוד',
     icon: HeartIcon,
   },
   {
     title: 'אבחון שגוי',
-    description: 'תיקים הכוללים עיכוב באבחון, החמצת אבחון או אבחון שגוי של מצבים רפואיים',
+    description: 'רשלנות בגין איחור באבחון, החמצת אבחון או אבחון שגוי של מצבים רפואיים כדוגמת מחלות סרטן, מחלות כרוניות, מומים בעובר ועוד',
     icon: ClipboardDocumentCheckIcon,
   },
   {
-    title: 'פגיעות בלידה',
-    description: 'סיוע למשפחות שנפגעו מרשלנות במהלך ההיריון, הלידה וההתאוששות',
+    title: 'פענוח שגוי',
+    description: 'פענוח שגוי של בדיקות הדמייה כולל אולטרה-סאונד, רנטגן, CT, MRI, PET CT, בדיקות מעבדה ובדיקות אחרות',
+    icon: ClipboardDocumentCheckIcon,
+  },
+  {
+    title: 'רשלנות בהריון ולידה',
+    description: 'רשלנות במהלך מעקב ההריון בגין אי הפנייה לבדיקות, אי מתן הסברים מלאים או בכלל, העדר אבחון של מומים בעובר, מחלות גנטיות ועוד. רשלנות במהלך הלידה בגין ביצוע לקוני של לידה וגינאלית או קיסרית',
     icon: UserGroupIcon,
   },
   {
@@ -25,15 +30,10 @@ const practices = [
     icon: BeakerIcon,
   },
   {
-    title: 'רשלנות בית חולים',
-    description: 'תביעות נגד בתי חולים בגין כשלים מערכתיים וטיפול רשלני',
+    title: 'רשלנות בבית חולים',
+    description: 'תביעות נגד בתי חולים בגין כשלים מערכתיים, טיפול רשלני, לרבות שחרור מוקדם של המטופל ואי מתן הנחיות נכונות או בכלל להמשך בירור או טיפול',
     icon: BuildingOfficeIcon,
-  },
-  {
-    title: 'טעויות במיון',
-    description: 'תיקים הכוללים טעויות בחדר מיון, עיכוב בטיפול ושחרור לא נכון של מטופלים',
-    icon: ExclamationTriangleIcon,
-  },
+  }
 ];
 
 export default function PracticeAreas() {
@@ -49,7 +49,7 @@ export default function PracticeAreas() {
         >
           <h2 className="text-4xl font-bold text-gray-900 mb-4">תחומי התמחות</h2>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            אנו מתמחים בכל סוגי תיקי הרשלנות הרפואית, נלחמים עבור מטופלים שנפגעו מרשלנות בטיפול הרפואי
+            אנו מתמחים בכל סוגי תיק הרשלנות ונלחמים עבור לקוחותינו
           </p>
         </motion.div>
 

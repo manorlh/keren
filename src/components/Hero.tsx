@@ -34,13 +34,13 @@ export default function Hero() {
           >
             <h1 className="text-3xl md:text-6xl font-bold mb-4 md:mb-6 text-right text-white drop-shadow-lg">
               קרן להגאני
-              <span className="block text-lg md:text-3xl mt-2 md:mt-4 font-light">משרד עורכי דין מוביל לרשלנות רפואית</span>
+              <span className="block text-lg md:text-3xl mt-2 md:mt-4 font-light">משרד עו״ד מוביל לרשלנות רפואית</span>
             </h1>
             <p className="text-base md:text-2xl mb-3 md:mb-4 text-right text-white drop-shadow-lg">
-              משרדנו מתמחה בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי ומימוש זכויותיכם
+              משרדנו מתמחה בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי
             </p>
             <p className="text-sm md:text-xl mb-6 md:mb-8 text-gray-100 font-light text-right drop-shadow-lg">
-              מומחים לרשלנות רפואית - הקול שלך בבית משפט
+              מומחים לרשלנות רפואית ונזקי גוף - הקול שלכם בבית משפט
             </p>
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-start">
               <Link 
