@@ -7,6 +7,7 @@ export default function Contact() {
   return (
     <section className="min-h-screen flex flex-col md:flex-row-reverse bg-white" id="contact">
       {/* Image Section */}
+
       <div className="w-full md:w-1/2 h-[40vh] md:h-screen flex items-center justify-center">
         <Image
           src="/images/law-office.jpg"
