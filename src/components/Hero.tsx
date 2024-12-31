@@ -15,39 +15,67 @@ export default function Hero() {
         />
       </div>
 
-      {/* Dark Overlay - Mobile Only */}
-      <div className="absolute inset-0 bg-black/50 md:hidden z-10"></div>
-      
-      {/* Gradient Overlay - Mobile Only */}
-      <div className="absolute inset-x-0 bottom-0 h-[50vh] bg-gradient-to-t from-black via-black/80 to-transparent md:hidden z-10"></div>
+      {/* Mobile Gradient */}
+      <div className="absolute bottom-0 left-0 right-0 h-[50vh] bg-gradient-to-t from-black/90 via-black/50 to-transparent md:hidden z-10"></div>
 
       {/* Content */}
       <div className="container mx-auto px-4 md:px-6 relative z-20 pb-12 md:pb-0" dir="ltr">
         <div className="w-full md:w-[35%] lg:w-auto lg:max-w-xl">
           <div className="animate-fade-in">
-            <h1 className="text-2xl sm:text-3xl lg:text-6xl font-bold mb-3 lg:mb-6 text-right text-white drop-shadow-lg">
-              קרן להגאני
-              <span className="block text-base sm:text-lg lg:text-3xl mt-2 lg:mt-4 font-light">משרד עו״ד מוביל לרשלנות רפואית</span>
-            </h1>
-            <p className="text-sm sm:text-base lg:text-2xl mb-2 lg:mb-4 text-right text-white drop-shadow-lg animation-delay-100">
-              משרדנו מתמחה בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי
-            </p>
-            <p className="text-xs sm:text-sm lg:text-xl mb-4 lg:mb-8 text-gray-100 font-light text-right drop-shadow-lg animation-delay-200">
-              מומחים לרשלנות רפואית ונזקי גוף - הקול שלכם בבית משפט
-            </p>
-            <div className="flex flex-col sm:flex-row gap-2 lg:gap-4 justify-start animation-delay-300">
-              <Link 
-                href="#contact"
-                className="bg-gray-900/90 text-white px-3 sm:px-4 lg:px-8 py-1.5 sm:py-2 lg:py-4 rounded-md text-xs sm:text-sm lg:text-lg font-semibold hover:bg-black transition-colors duration-300 text-center sm:text-right backdrop-blur-sm"
-              >
-                לייעוץ ראשוני ללא עלות
-              </Link>
-              <Link 
-                href="#practice-areas"
-                className="bg-white/90 text-gray-900 px-3 sm:px-4 lg:px-8 py-1.5 sm:py-2 lg:py-4 rounded-md text-xs sm:text-sm lg:text-lg font-semibold hover:bg-white transition-colors duration-300 text-center sm:text-right backdrop-blur-sm"
-              >
-                תחומי התמחות
-              </Link>
+            {/* Mobile Content */}
+            <div className="md:hidden">
+              <h1 className="text-2xl sm:text-3xl lg:text-6xl font-bold mb-3 lg:mb-6 text-right text-white drop-shadow-lg">
+                קרן להגאני
+                <span className="block text-base sm:text-lg lg:text-3xl mt-2 lg:mt-4 font-light">משרד עו״ד מוביל לרשלנות רפואית</span>
+              </h1>
+              <p className="text-sm sm:text-base lg:text-2xl mb-2 lg:mb-4 text-right text-white drop-shadow-lg animation-delay-100">
+                משרדנו מתמחה בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי
+              </p>
+              <p className="text-xs sm:text-sm lg:text-xl mb-4 lg:mb-8 text-gray-100 font-light text-right drop-shadow-lg animation-delay-200">
+                מומחים לרשלנות רפואית ונזקי גוף - הקול שלכם בבית משפט
+              </p>
+              <div className="flex flex-col sm:flex-row gap-2 lg:gap-4 justify-start animation-delay-300">
+                <Link 
+                  href="#contact"
+                  className="bg-gray-900/90 text-white px-3 sm:px-4 lg:px-8 py-1.5 sm:py-2 lg:py-4 rounded-md text-xs sm:text-sm lg:text-lg font-semibold hover:bg-black transition-colors duration-300 text-center sm:text-right backdrop-blur-sm"
+                >
+                  לייעוץ ראשוני ללא עלות
+                </Link>
+                <Link 
+                  href="#practice-areas"
+                  className="bg-white/90 text-gray-900 px-3 sm:px-4 lg:px-8 py-1.5 sm:py-2 lg:py-4 rounded-md text-xs sm:text-sm lg:text-lg font-semibold hover:bg-white transition-colors duration-300 text-center sm:text-right backdrop-blur-sm"
+                >
+                  תחומי התמחות
+                </Link>
+              </div>
+            </div>
+
+            {/* Desktop Content */}
+            <div className="hidden md:block">
+              <h1 className="text-2xl sm:text-3xl lg:text-6xl font-bold mb-3 lg:mb-6 text-right text-white drop-shadow-lg">
+                קרן להגאני
+                <span className="block text-base sm:text-lg lg:text-3xl mt-2 lg:mt-4 font-light">משרד עו״ד מוביל לרשלנות רפואית</span>
+              </h1>
+              <p className="text-sm sm:text-base lg:text-2xl mb-2 lg:mb-4 text-right text-white drop-shadow-lg animation-delay-100">
+                משרדנו מתמחה בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי
+              </p>
+              <p className="text-xs sm:text-sm lg:text-xl mb-4 lg:mb-8 text-gray-100 font-light text-right drop-shadow-lg animation-delay-200">
+                מומחים לרשלנות רפואית ונזקי גוף - הקול שלכם בבית משפט
+              </p>
+              <div className="flex flex-col sm:flex-row gap-2 lg:gap-4 justify-start animation-delay-300">
+                <Link 
+                  href="#contact"
+                  className="bg-gray-900/90 text-white px-3 sm:px-4 lg:px-8 py-1.5 sm:py-2 lg:py-4 rounded-md text-xs sm:text-sm lg:text-lg font-semibold hover:bg-black transition-colors duration-300 text-center sm:text-right backdrop-blur-sm"
+                >
+                  לייעוץ ראשוני ללא עלות
+                </Link>
+                <Link 
+                  href="#practice-areas"
+                  className="bg-white/90 text-gray-900 px-3 sm:px-4 lg:px-8 py-1.5 sm:py-2 lg:py-4 rounded-md text-xs sm:text-sm lg:text-lg font-semibold hover:bg-white transition-colors duration-300 text-center sm:text-right backdrop-blur-sm"
+                >
+                  תחומי התמחות
+                </Link>
+              </div>
             </div>
           </div>
         </div>
