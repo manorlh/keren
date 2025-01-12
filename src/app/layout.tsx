@@ -71,6 +71,7 @@ export const metadata: Metadata = {
     'og:image:height': '630',
     'og:image:type': 'image/jpeg',
     'og:image:alt': 'קרן להגאני - משרד עו״ד מוביל לרשלנות רפואית',
+    'og:logo':'https://keren-tau.vercel.app/images/logo.webp',
   }
 };
 
