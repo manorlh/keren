@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
 
 interface AccessibilitySettings {
   fontSize: number;
@@ -28,6 +29,14 @@ const defaultSettings: AccessibilitySettings = {
 export default function AccessibilityWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [settings, setSettings] = useState<AccessibilitySettings>(defaultSettings);
+
+  const handleOpen = () => {
+    setIsOpen(true);
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
+  };
 
   // Load settings from localStorage on mount
   useEffect(() => {
@@ -107,186 +116,168 @@ export default function AccessibilityWidget() {
 
   return (
     <>
-      <motion.button
-        onClick={() => setIsOpen(true)}
-        className="fixed right-4 bottom-4 z-50 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 flex items-center gap-2"
-        aria-label="פתח תפריט נגישות"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
+      <button
+        onClick={handleOpen}
+        type="button"
+        className="fixed bottom-4 right-4 w-8 h-8 md:w-12 md:h-12 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition-colors duration-300 flex items-center justify-center z-50"
+        aria-label="הגדרות נגישות"
       >
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="11" stroke="currentColor" strokeWidth="2"/>
-          <path d="M12 6.5V17.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-          <path d="M16 10L12 6L8 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-          <path d="M8 14L12 18L16 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-        <span className="text-sm font-medium">נגישות</span>
-      </motion.button>
+        <AccessibilityNewIcon className="w-5 h-5 md:w-6 md:h-6" />
+      </button>
 
-      <AnimatePresence>
-        {isOpen && (
-          <>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black bg-opacity-50 z-50"
-              onClick={() => setIsOpen(false)}
-            />
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.95, y: 20 }}
-              transition={{ type: "spring", duration: 0.5 }}
-              className="fixed inset-0 z-50 overflow-y-auto"
-            >
-              <div className="min-h-screen flex items-center justify-center p-4">
-                <div className="bg-gray-50 rounded-lg shadow-xl p-6 w-full max-w-md relative text-right">
-                  <div className="flex items-center mb-6 border-b border-gray-200 pb-4">
-                    <button
-                      onClick={() => setIsOpen(false)}
-                      className="text-gray-600 hover:text-gray-800 transition-colors"
-                      aria-label="סגור"
-                    >
-                      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                      </svg>
-                    </button>
-                    <h2 className="text-xl font-bold text-gray-900 flex-1 text-right mr-4">הגדרות נגישות</h2>
-                  </div>
-                  
-                  <div className="space-y-6">
-                    {/* Font Size Control */}
-                    <div>
-                      <label className="block mb-2 font-medium text-gray-900">גודל טקסט</label>
-                      <div className="flex items-center gap-3 bg-white p-3 rounded-lg shadow-sm">
-                        <button
-                          onClick={() => updateSettings({ fontSize: settings.fontSize - 10 })}
-                          className="p-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors disabled:opacity-50 w-10 h-10 flex items-center justify-center text-xl font-bold"
-                          disabled={settings.fontSize <= 90}
-                        >
-                          -
-                        </button>
-                        <span className="flex-1 text-center font-medium text-gray-900 text-lg">{settings.fontSize}%</span>
-                        <button
-                          onClick={() => updateSettings({ fontSize: settings.fontSize + 10 })}
-                          className="p-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors disabled:opacity-50 w-10 h-10 flex items-center justify-center text-xl font-bold"
-                          disabled={settings.fontSize >= 150}
-                        >
-                          +
-                        </button>
-                      </div>
-                    </div>
-
-                    {/* Cursor Size */}
-                    <div>
-                      <label className="block mb-2 font-medium text-gray-900">גודל סמן</label>
-                      <div className="grid grid-cols-3 gap-2">
-                        <button
-                          onClick={() => updateSettings({ cursor: 'default' })}
-                          className={`p-2 rounded-lg border shadow-sm transition-colors ${
-                            settings.cursor === 'default' ? 'bg-blue-100 border-blue-300 text-blue-800' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50'
-                          }`}
-                        >
-                          רגיל
-                        </button>
-                        <button
-                          onClick={() => updateSettings({ cursor: 'large' })}
-                          className={`p-2 rounded-lg border shadow-sm transition-colors ${
-                            settings.cursor === 'large' ? 'bg-blue-100 border-blue-300 text-blue-800' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50'
-                          }`}
-                        >
-                          גדול
-                        </button>
-                        <button
-                          onClick={() => updateSettings({ cursor: 'larger' })}
-                          className={`p-2 rounded-lg border shadow-sm transition-colors ${
-                            settings.cursor === 'larger' ? 'bg-blue-100 border-blue-300 text-blue-800' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50'
-                          }`}
-                        >
-                          גדול מאוד
-                        </button>
-                      </div>
-                    </div>
-
-                    {/* Toggles */}
-                    <div className="space-y-3">
-                      <label className="flex items-center gap-3 p-3 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors cursor-pointer">
-                        <input
-                          type="checkbox"
-                          checked={settings.highContrast}
-                          onChange={(e) => updateSettings({ highContrast: e.target.checked })}
-                          className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-                        />
-                        <span className="text-gray-900">ניגודיות גבוהה</span>
-                      </label>
-
-                      <label className="flex items-center gap-3 p-3 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors cursor-pointer">
-                        <input
-                          type="checkbox"
-                          checked={settings.oppositeContrast}
-                          onChange={(e) => updateSettings({ oppositeContrast: e.target.checked })}
-                          className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-                        />
-                        <span className="text-gray-900">ניגודיות הפוכה</span>
-                      </label>
-
-                      <label className="flex items-center gap-3 p-3 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors cursor-pointer">
-                        <input
-                          type="checkbox"
-                          checked={settings.reducedMotion}
-                          onChange={(e) => updateSettings({ reducedMotion: e.target.checked })}
-                          className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-                        />
-                        <span className="text-gray-900">הפחתת אנימציות</span>
-                      </label>
-
-                      <label className="flex items-center gap-3 p-3 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors cursor-pointer">
-                        <input
-                          type="checkbox"
-                          checked={settings.highlightLinks}
-                          onChange={(e) => updateSettings({ highlightLinks: e.target.checked })}
-                          className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-                        />
-                        <span className="text-gray-900">הדגשת קישורים</span>
-                      </label>
-
-                      <label className="flex items-center gap-3 p-3 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors cursor-pointer">
-                        <input
-                          type="checkbox"
-                          checked={settings.dyslexicFont}
-                          onChange={(e) => updateSettings({ dyslexicFont: e.target.checked })}
-                          className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-                        />
-                        <span className="text-gray-900">גופן ידידותי לדיסלקציה</span>
-                      </label>
-
-                      <label className="flex items-center gap-3 p-3 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors cursor-pointer">
-                        <input
-                          type="checkbox"
-                          checked={settings.grayscale}
-                          onChange={(e) => updateSettings({ grayscale: e.target.checked })}
-                          className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
-                        />
-                        <span className="text-gray-900">מצב שחור-לבן</span>
-                      </label>
-                    </div>
-
-                    <div className="border-t border-gray-200 pt-4 mt-6">
+      {isOpen && (
+        <>
+          <div
+            className="fixed inset-0 bg-black bg-opacity-50 z-50"
+            onClick={handleClose}
+          />
+          <div className="fixed inset-0 z-50 overflow-y-auto">
+            <div className="min-h-screen flex items-end sm:items-center justify-center p-0 sm:p-4">
+              <div className="bg-gray-50 rounded-t-2xl sm:rounded-lg shadow-xl p-4 sm:p-6 w-full sm:max-w-md relative text-right">
+                <div className="flex items-center mb-4 sm:mb-6 border-b border-gray-200 pb-3 sm:pb-4">
+                  <button
+                    onClick={handleClose}
+                    className="text-gray-600 hover:text-gray-800 transition-colors p-2"
+                    aria-label="סגור"
+                  >
+                    <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                  <h2 className="text-lg sm:text-xl font-bold text-gray-900 flex-1 text-right mr-2 sm:mr-4">הגדרות נגישות</h2>
+                </div>
+                
+                <div className="space-y-4 sm:space-y-6">
+                  {/* Font Size Control */}
+                  <div>
+                    <label className="block mb-2 font-medium text-gray-900 text-sm sm:text-base">גודל טקסט</label>
+                    <div className="flex items-center gap-3 bg-white p-2 sm:p-3 rounded-lg shadow-sm">
                       <button
-                        onClick={resetSettings}
-                        className="w-full py-3 px-4 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors font-bold text-lg shadow-sm"
+                        onClick={() => updateSettings({ fontSize: settings.fontSize - 10 })}
+                        className="p-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors disabled:opacity-50 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-lg sm:text-xl font-bold"
+                        disabled={settings.fontSize <= 90}
                       >
-                        איפוס הגדרות
+                        -
+                      </button>
+                      <span className="flex-1 text-center font-medium text-gray-900 text-base sm:text-lg">{settings.fontSize}%</span>
+                      <button
+                        onClick={() => updateSettings({ fontSize: settings.fontSize + 10 })}
+                        className="p-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors disabled:opacity-50 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-lg sm:text-xl font-bold"
+                        disabled={settings.fontSize >= 150}
+                      >
+                        +
                       </button>
                     </div>
                   </div>
+
+                  {/* Cursor Size */}
+                  <div>
+                    <label className="block mb-2 font-medium text-gray-900 text-sm sm:text-base">גודל סמן</label>
+                    <div className="grid grid-cols-3 gap-2">
+                      <button
+                        onClick={() => updateSettings({ cursor: 'default' })}
+                        className={`p-2 rounded-lg border shadow-sm transition-colors text-sm sm:text-base ${
+                          settings.cursor === 'default' ? 'bg-blue-100 border-blue-300 text-blue-800' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50'
+                        }`}
+                      >
+                        רגיל
+                      </button>
+                      <button
+                        onClick={() => updateSettings({ cursor: 'large' })}
+                        className={`p-2 rounded-lg border shadow-sm transition-colors text-sm sm:text-base ${
+                          settings.cursor === 'large' ? 'bg-blue-100 border-blue-300 text-blue-800' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50'
+                        }`}
+                      >
+                        גדול
+                      </button>
+                      <button
+                        onClick={() => updateSettings({ cursor: 'larger' })}
+                        className={`p-2 rounded-lg border shadow-sm transition-colors text-sm sm:text-base ${
+                          settings.cursor === 'larger' ? 'bg-blue-100 border-blue-300 text-blue-800' : 'bg-white border-gray-200 text-gray-700 hover:bg-gray-50'
+                        }`}
+                      >
+                        גדול מאוד
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* Toggles */}
+                  <div className="space-y-2 sm:space-y-3">
+                    <label className="flex items-center gap-3 p-2 sm:p-3 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={settings.highContrast}
+                        onChange={(e) => updateSettings({ highContrast: e.target.checked })}
+                        className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                      />
+                      <span className="text-gray-900 text-sm sm:text-base">ניגודיות גבוהה</span>
+                    </label>
+
+                    <label className="flex items-center gap-3 p-2 sm:p-3 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={settings.oppositeContrast}
+                        onChange={(e) => updateSettings({ oppositeContrast: e.target.checked })}
+                        className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                      />
+                      <span className="text-gray-900 text-sm sm:text-base">ניגודיות הפוכה</span>
+                    </label>
+
+                    <label className="flex items-center gap-3 p-2 sm:p-3 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={settings.reducedMotion}
+                        onChange={(e) => updateSettings({ reducedMotion: e.target.checked })}
+                        className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                      />
+                      <span className="text-gray-900 text-sm sm:text-base">הפחתת אנימציות</span>
+                    </label>
+
+                    <label className="flex items-center gap-3 p-2 sm:p-3 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={settings.highlightLinks}
+                        onChange={(e) => updateSettings({ highlightLinks: e.target.checked })}
+                        className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                      />
+                      <span className="text-gray-900 text-sm sm:text-base">הדגשת קישורים</span>
+                    </label>
+
+                    <label className="flex items-center gap-3 p-2 sm:p-3 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={settings.dyslexicFont}
+                        onChange={(e) => updateSettings({ dyslexicFont: e.target.checked })}
+                        className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                      />
+                      <span className="text-gray-900 text-sm sm:text-base">גופן ידידותי לדיסלקציה</span>
+                    </label>
+
+                    <label className="flex items-center gap-3 p-2 sm:p-3 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={settings.grayscale}
+                        onChange={(e) => updateSettings({ grayscale: e.target.checked })}
+                        className="w-4 h-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+                      />
+                      <span className="text-gray-900 text-sm sm:text-base">מצב שחור-לבן</span>
+                    </label>
+                  </div>
+
+                  <div className="border-t border-gray-200 pt-4 mt-4 sm:mt-6">
+                    <button
+                      onClick={resetSettings}
+                      className="w-full py-2.5 sm:py-3 px-4 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors font-bold text-base sm:text-lg shadow-sm"
+                    >
+                      איפוס הגדרות
+                    </button>
+                  </div>
                 </div>
               </div>
-            </motion.div>
-          </>
-        )}
-      </AnimatePresence>
+            </div>
+          </div>
+        </>
+      )}
     </>
   );
 } 

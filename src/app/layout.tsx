@@ -14,7 +14,7 @@ const rubik = Rubik({
 export const metadata: Metadata = {
   title: 'קרן להגאני - משרד עורכי דין',
   description: 'מומחים בתביעות רשלנות רפואית',
-  metadataBase: new URL('https://keren-tau.vercel.app'),
+  metadataBase: new URL('https://www.klh-law.co.il'),
   icons: {
     icon: [
       { url: '/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
@@ -33,13 +33,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'he_IL',
-    url: 'https://keren-tau.vercel.app',
+    url: 'https://www.klh-law.co.il',
     siteName: 'קרן להגאני - משרד עורכי דין',
     title: 'קרן להגאני - משרד עו״ד מוביל לרשלנות רפואית',
     description: 'משרדנו מתמחה בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי ומימוש זכויותיכם',
     images: [
       {
-        url: 'https://keren-tau.vercel.app/images/lawyer.jpg',
+        url: 'https://www.klh-law.co.il/images/lawyer.jpg',
         width: 1200,
         height: 630,
         alt: 'קרן להגאני - משרד עו״ד מוביל לרשלנות רפואית',
@@ -52,26 +52,26 @@ export const metadata: Metadata = {
     site: '@kerenlahagani',
     title: 'קרן להגאני - משרד עו״ד מוביל לרשלנות רפואית',
     description: 'משרדנו מתמחה בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי ומימוש זכויותיכם',
-    images: ['https://keren-tau.vercel.app/images/lawyer.jpg'],
+    images: ['https://www.klh-law.co.il/images/lawyer.jpg'],
     creator: '@kerenlahagani',
   },
   alternates: {
-    canonical: 'https://keren-tau.vercel.app'
+    canonical: 'https://www.klh-law.co.il'
   },
   other: {
     'og:title': 'קרן להגאני - משרד עו״ד מוביל לרשלנות רפואית',
     'og:description': 'משרדנו מתמחה בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי ומימוש זכויותיכם',
-    'og:url': 'https://keren-tau.vercel.app',
+    'og:url': 'https://www.klh-law.co.il',
     'og:site_name': 'קרן להגאני - משרד עורכי דין',
     'og:locale': 'he_IL',
     'og:type': 'website',
-    'og:image': 'https://keren-tau.vercel.app/images/lawyer.jpg',
-    'og:image:secure_url': 'https://keren-tau.vercel.app/images/lawyer.jpg',
+    'og:image': 'https://www.klh-law.co.il/images/lawyer.jpg',
+    'og:image:secure_url': 'https://www.klh-law.co.il/images/lawyer.jpg',
     'og:image:width': '1200',
     'og:image:height': '630',
     'og:image:type': 'image/jpeg',
     'og:image:alt': 'קרן להגאני - משרד עו״ד מוביל לרשלנות רפואית',
-    'og:logo':'https://keren-tau.vercel.app/images/logo.webp',
+    'og:logo':'https://www.klh-law.co.il/images/logo.webp',
   }
 };
 

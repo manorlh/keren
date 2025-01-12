@@ -58,7 +58,7 @@ export default function AccessibilityPage() {
           <div className="mt-2 text-black">
             <p>שם: קרן להגאני</p>
             <p>טלפון: 054-7932398</p>
-            <p>דוא״ל: office@keren-lh.co.il</p>
+            <p>דוא״ל: keren@klh-law.co.il</p>
           </div>
         </section>
 

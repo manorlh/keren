@@ -9,7 +9,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">צור קשר</h3>
             <div className="space-y-2">
               <p><span className="sr-only">טלפון: </span>054-7932398</p>
-              <p><span className="sr-only">דוא״ל: </span>office@keren-lh.co.il</p>
+              <p><span className="sr-only">דוא״ל: </span>keren@klh-law.co.il</p>
               <p><span className="sr-only">כתובת: </span>יגאל אלון 65, תל אביב</p>
             </div>
           </div>
