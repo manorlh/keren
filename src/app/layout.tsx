@@ -30,27 +30,30 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
+    type: 'website',
+    locale: 'he_IL',
+    url: 'https://keren-tau.vercel.app',
+    siteName: 'קרן להגאני - משרד עורכי דין',
     title: 'קרן להגאני - משרד עו״ד מוביל לרשלנות רפואית',
     description: 'משרדנו מתמחה בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי ומימוש זכויותיכם',
-    url: '/',
-    siteName: 'קרן להגאני - משרד עורכי דין',
-    locale: 'he_IL',
-    type: 'website',
     images: [{
-      url: '/images/lawyer.jpg',
+      url: 'https://keren-tau.vercel.app/images/lawyer.jpg',
       width: 1200,
       height: 630,
       alt: 'קרן להגאני - משרד עו״ד מוביל לרשלנות רפואית',
+      type: 'image/jpeg',
     }],
   },
   twitter: {
     card: 'summary_large_image',
+    site: '@kerenlahagani',
     title: 'קרן להגאני - משרד עו״ד מוביל לרשלנות רפואית',
     description: 'משרדנו מתמחה בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי ומימוש זכויותיכם',
-    images: ['/images/lawyer.jpg'],
+    images: ['https://keren-tau.vercel.app/images/lawyer.jpg'],
+    creator: '@kerenlahagani',
   },
   alternates: {
-    canonical: '/'
+    canonical: 'https://keren-tau.vercel.app'
   }
 };
 
