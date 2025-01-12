@@ -21,11 +21,11 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-bold mb-4">פרטי התקשרות</h3>
             <address className="text-gray-400 not-italic">
-              רחוב המשפט 123<br />
-              קומה 10<br />
-              תל אביב, ישראל<br />
-              <a href="tel:+97255123456" className="hover:text-white" dir="ltr">+972 (55) 123-4567</a><br />
-              <a href="mailto:contact@kerenlahagani.co.il" className="hover:text-white" dir="ltr">contact@kerenlahagani.co.il</a>
+              רחוב האים בז'רנו 7<br />
+              מתחם הבורסה<br />
+              רמת גן, ישראל<br />
+              <a href="tel:+97255123456" className="hover:text-white" dir="ltr">+972 (073) 2839503</a><br />
+              <a href="mailto:contact@kerenlahagani.co.il" className="hover:text-white" dir="ltr">keren@klh-law.co.il</a>
             </address>
           </div>
         </div>
