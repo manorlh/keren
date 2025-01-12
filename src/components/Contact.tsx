@@ -47,6 +47,7 @@ export default function Contact() {
       form.reset();
       alert('ההודעה נשלחה בהצלחה!');
     } catch (error) {
+      console.error(error)
       alert('אירעה שגיאה בשליחת ההודעה. אנא נסה שוב מאוחר יותר.');
     } finally {
       setIsSubmitting(false);
