@@ -1,7 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import {useEffect, useState} from 'react';
 import AccessibilityNewIcon from '@mui/icons-material/AccessibilityNew';
 
 interface AccessibilitySettings {
