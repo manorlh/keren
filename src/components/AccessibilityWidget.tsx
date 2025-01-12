@@ -26,6 +26,7 @@ const defaultSettings: AccessibilitySettings = {
 };
 
 export default function AccessibilityWidget() {
+  const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [settings, setSettings] = useState<AccessibilitySettings>(defaultSettings);
 
@@ -35,24 +36,6 @@ export default function AccessibilityWidget() {
 
   const handleClose = () => {
     setIsOpen(false);
-  };
-
-  // Load settings from localStorage on mount
-  useEffect(() => {
-    const savedSettings = localStorage.getItem('accessibility-settings');
-    if (savedSettings) {
-      const parsedSettings = JSON.parse(savedSettings);
-      setSettings(parsedSettings);
-      applySettings(parsedSettings);
-    }
-  }, []);
-
-  // Update settings
-  const updateSettings = (newSettings: Partial<AccessibilitySettings>) => {
-    const updatedSettings = { ...settings, ...newSettings };
-    setSettings(updatedSettings);
-    applySettings(updatedSettings);
-    localStorage.setItem('accessibility-settings', JSON.stringify(updatedSettings));
   };
 
   // Apply settings to the document
@@ -109,9 +92,33 @@ export default function AccessibilityWidget() {
     }
   };
 
+  // Update settings
+  const updateSettings = (newSettings: Partial<AccessibilitySettings>) => {
+    const updatedSettings = { ...settings, ...newSettings };
+    setSettings(updatedSettings);
+    applySettings(updatedSettings);
+    localStorage.setItem('accessibility-settings', JSON.stringify(updatedSettings));
+  };
+
   const resetSettings = () => {
     updateSettings(defaultSettings);
   };
+
+  // Only run on client side
+  useEffect(() => {
+    setMounted(true);
+    const savedSettings = localStorage.getItem('accessibility-settings');
+    if (savedSettings) {
+      const parsedSettings = JSON.parse(savedSettings);
+      setSettings(parsedSettings);
+      applySettings(parsedSettings);
+    }
+  }, []);
+
+  // Don't render anything on server side
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <>
@@ -131,26 +138,26 @@ export default function AccessibilityWidget() {
             onClick={handleClose}
           />
           <div className="fixed inset-0 z-50 overflow-y-auto">
-            <div className="min-h-screen flex items-end sm:items-center justify-center p-0 sm:p-4">
-              <div className="bg-gray-50 rounded-t-2xl sm:rounded-lg shadow-xl p-4 sm:p-6 w-full sm:max-w-md relative text-right">
-                <div className="flex items-center mb-4 sm:mb-6 border-b border-gray-200 pb-3 sm:pb-4">
+            <div className="min-h-screen flex items-end sm:items-center justify-center p-0 sm:p-2">
+              <div className="bg-gray-50 rounded-t-2xl sm:rounded-lg shadow-xl p-3 sm:p-4 w-full sm:max-w-md relative text-right">
+                <div className="flex items-center mb-2 sm:mb-3 border-b border-gray-200 pb-2">
                   <button
                     onClick={handleClose}
-                    className="text-gray-600 hover:text-gray-800 transition-colors p-2"
+                    className="text-gray-600 hover:text-gray-800 transition-colors p-1"
                     aria-label="סגור"
                   >
-                    <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                     </svg>
                   </button>
-                  <h2 className="text-lg sm:text-xl font-bold text-gray-900 flex-1 text-right mr-2 sm:mr-4">הגדרות נגישות</h2>
+                  <h2 className="text-lg font-bold text-gray-900 flex-1 text-right mr-2">הגדרות נגישות</h2>
                 </div>
                 
-                <div className="space-y-4 sm:space-y-6">
+                <div className="space-y-3">
                   {/* Font Size Control */}
                   <div>
-                    <label className="block mb-2 font-medium text-gray-900 text-sm sm:text-base">גודל טקסט</label>
-                    <div className="flex items-center gap-3 bg-white p-2 sm:p-3 rounded-lg shadow-sm">
+                    <label className="block mb-1 font-medium text-gray-900 text-sm">גודל טקסט</label>
+                    <div className="flex items-center gap-3 bg-white p-2 rounded-lg shadow-sm">
                       <button
                         onClick={() => updateSettings({ fontSize: settings.fontSize - 10 })}
                         className="p-2 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors disabled:opacity-50 w-8 h-8 sm:w-10 sm:h-10 flex items-center justify-center text-lg sm:text-xl font-bold"
@@ -171,7 +178,7 @@ export default function AccessibilityWidget() {
 
                   {/* Cursor Size */}
                   <div>
-                    <label className="block mb-2 font-medium text-gray-900 text-sm sm:text-base">גודל סמן</label>
+                    <label className="block mb-1 font-medium text-gray-900 text-sm">גודל סמן</label>
                     <div className="grid grid-cols-3 gap-2">
                       <button
                         onClick={() => updateSettings({ cursor: 'default' })}
@@ -201,8 +208,8 @@ export default function AccessibilityWidget() {
                   </div>
 
                   {/* Toggles */}
-                  <div className="space-y-2 sm:space-y-3">
-                    <label className="flex items-center gap-3 p-2 sm:p-3 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors cursor-pointer">
+                  <div className="space-y-1">
+                    <label className="flex items-center gap-3 p-2 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors cursor-pointer">
                       <input
                         type="checkbox"
                         checked={settings.highContrast}
@@ -212,7 +219,7 @@ export default function AccessibilityWidget() {
                       <span className="text-gray-900 text-sm sm:text-base">ניגודיות גבוהה</span>
                     </label>
 
-                    <label className="flex items-center gap-3 p-2 sm:p-3 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors cursor-pointer">
+                    <label className="flex items-center gap-3 p-2 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors cursor-pointer">
                       <input
                         type="checkbox"
                         checked={settings.oppositeContrast}
@@ -222,7 +229,7 @@ export default function AccessibilityWidget() {
                       <span className="text-gray-900 text-sm sm:text-base">ניגודיות הפוכה</span>
                     </label>
 
-                    <label className="flex items-center gap-3 p-2 sm:p-3 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors cursor-pointer">
+                    <label className="flex items-center gap-3 p-2 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors cursor-pointer">
                       <input
                         type="checkbox"
                         checked={settings.reducedMotion}
@@ -232,7 +239,7 @@ export default function AccessibilityWidget() {
                       <span className="text-gray-900 text-sm sm:text-base">הפחתת אנימציות</span>
                     </label>
 
-                    <label className="flex items-center gap-3 p-2 sm:p-3 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors cursor-pointer">
+                    <label className="flex items-center gap-3 p-2 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors cursor-pointer">
                       <input
                         type="checkbox"
                         checked={settings.highlightLinks}
@@ -242,7 +249,7 @@ export default function AccessibilityWidget() {
                       <span className="text-gray-900 text-sm sm:text-base">הדגשת קישורים</span>
                     </label>
 
-                    <label className="flex items-center gap-3 p-2 sm:p-3 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors cursor-pointer">
+                    <label className="flex items-center gap-3 p-2 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors cursor-pointer">
                       <input
                         type="checkbox"
                         checked={settings.dyslexicFont}
@@ -252,7 +259,7 @@ export default function AccessibilityWidget() {
                       <span className="text-gray-900 text-sm sm:text-base">גופן ידידותי לדיסלקציה</span>
                     </label>
 
-                    <label className="flex items-center gap-3 p-2 sm:p-3 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors cursor-pointer">
+                    <label className="flex items-center gap-3 p-2 rounded-lg bg-white shadow-sm hover:bg-gray-50 transition-colors cursor-pointer">
                       <input
                         type="checkbox"
                         checked={settings.grayscale}
@@ -263,10 +270,10 @@ export default function AccessibilityWidget() {
                     </label>
                   </div>
 
-                  <div className="border-t border-gray-200 pt-4 mt-4 sm:mt-6">
+                  <div className="border-t border-gray-200 pt-2 mt-2">
                     <button
                       onClick={resetSettings}
-                      className="w-full py-2.5 sm:py-3 px-4 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors font-bold text-base sm:text-lg shadow-sm"
+                      className="w-full py-2 px-4 bg-blue-100 text-blue-700 rounded-lg hover:bg-blue-200 transition-colors font-bold text-base shadow-sm"
                     >
                       איפוס הגדרות
                     </button>
