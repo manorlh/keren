@@ -12,7 +12,7 @@ export default function About() {
                     <div className="grid md:grid-cols-3 gap-8 mt-16">
                         <div className="p-6 bg-gray-50 rounded-lg hover:shadow-md transition-shadow duration-300">
                             <h3 className="text-xl font-semibold text-gray-900 mb-4">ניסיון בייצוג מהצד השני</h3>
-                            <p className="text-gray-600">יייצוג קודם של המוסדות הרפואיים, הרופאים, חברות הביטוח, מעניק לו יתרון משמעותי בניהול התיק</p>
+                            <p className="text-gray-600">יייצוג קודם של המוסדות הרפואיים, הרופאים, חברות הביטוח, מעניק לנו יתרון משמעותי בניהול התיק</p>
                         </div>
                         <div className="p-6 bg-gray-50 rounded-lg hover:shadow-md transition-shadow duration-300">
                             <h3 className="text-xl font-semibold text-gray-900 mb-4">רשת מומחים</h3>
@@ -34,7 +34,7 @@ export default function About() {
                         </div>
                         <div className="p-6 bg-gray-50 rounded-lg hover:shadow-md transition-shadow duration-300">
                             <h3 className="text-xl font-semibold text-gray-900 mb-4">מימון</h3>
-                            <p className="text-gray-600">שיתוף פעולה עם חברות מימון בהעדר יכולת כלכלית לשאת בעלות חוות הדעת הרפואיות הדרושות לניהול ההליך תיק</p>
+                            <p className="text-gray-600">למשרדנו שיתוף פעולה פורה עם חברות מימון משפטיות למקרים של העדר יכולת כלכלית לשאת בעלות חוות הדעת הרפואיות או הוצאות אחרות הדרושות לניהול ההליך</p>
                         </div>
                     </div>
                 </div>

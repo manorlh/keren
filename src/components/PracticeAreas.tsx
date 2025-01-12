@@ -12,37 +12,37 @@ const practices = [
   {
     title: 'טעויות בניתוח',
     description: 'ייצוג קורבנות של טעויות כירורגיות, בניתוחים כירורגים, אורתופדים, גניקולוגים, פלסטיים, אורולוגים, לבביים ועוד',
-    icon: <LocalHospital className="w-12 h-12 text-red-600 group-hover:text-red-700 transition-colors duration-300" />,
+    icon: <LocalHospital className="w-16 h-16 text-red-600 group-hover:text-red-700 transition-colors duration-300" />,
   },
   {
     title: 'אבחון שגוי',
     description: 'רשלנות בגין איחור באבחון, החמצת אבחון או אבחון שגוי של מצבים רפואיים כדוגמת מחלות סרטן, מחלות כרוניות, מומים בעובר ועוד',
-    icon: <Search className="w-12 h-12 text-blue-600 group-hover:text-blue-700 transition-colors duration-300" />,
+    icon: <Search className="w-16 h-16 text-blue-600 group-hover:text-blue-700 transition-colors duration-300" />,
   },
   {
     title: 'פענוח שגוי',
-    description: 'פענוח שגוי של בדיקות הדמייה כולל אולטרה-סאונד, רנטגן, CT, MRI, PET CT, בדיקות מעבדה ובדיקות אחרות',
-    icon: <ImageSearch className="w-12 h-12 text-gray-600 group-hover:text-gray-700 transition-colors duration-300" />,
+    description: 'פענוח שגוי של בדיקות הדמייה כולל אולטרה-סאונד,צילום רנטגן, CT, MRI, PET CT, בדיקות מעבדה ובדיקות אחרות',
+    icon: <ImageSearch className="w-16 h-16 text-indigo-600 group-hover:text-indigo-700 transition-colors duration-300" />,
   },
   {
     title: 'רשלנות בהריון ולידה',
     description: 'רשלנות במהלך מעקב ההריון בגין אי הפנייה לבדיקות, אי מתן הסברים מלאים או בכלל, העדר אבחון של מומים בעובר, מחלות גנטיות ועוד. רשלנות במהלך הלידה בגין ביצוע לקוני של לידה וגינאלית או קיסרית או בתום הלידה בגין טיפול רשלני שניתן ליולדת או ליילוד',
-    icon: <PregnantWoman className="w-12 h-12 text-rose-400 group-hover:text-rose-500 transition-colors duration-300" />,
+    icon: <PregnantWoman className="w-16 h-16 text-rose-400 group-hover:text-rose-500 transition-colors duration-300" />,
   },
   {
     title: 'טעויות בתרופות',
     description: 'תיקים הכוללים מתן תרופה שגויה, מינון שגוי ואינטראקציות מסוכנות בין תרופות',
-    icon: <Medication className="w-12 h-12 text-emerald-600 group-hover:text-emerald-700 transition-colors duration-300" />,
+    icon: <Medication className="w-16 h-16 text-emerald-600 group-hover:text-emerald-700 transition-colors duration-300" />,
   },
   {
     title: 'רשלנות בבית חולים',
     description: 'תביעות נגד בתי חולים בגין כשלים מערכתיים, טיפול רשלני, לרבות שחרור מוקדם של המטופל ואי מתן הנחיות נכונות או בכלל להמשך בירור או טיפול',
-    icon: <Business className="w-12 h-12 text-sky-600 group-hover:text-sky-700 transition-colors duration-300" />,
+    icon: <Business className="w-16 h-16 text-sky-600 group-hover:text-sky-700 transition-colors duration-300" />,
   },
   {
     title: 'רשלנות ברפואת שיניים',
     description: 'אבחון שגוי או מאוחר של בעיות שיניים וחניכיים, טיפולי שורש, עקירות או השתלות שבוצעו ברשלנות, פגיעות עצביות שנגרמו במהלך טיפול, יישום לקוי של גשרים, כתרים ועוד',
-    icon: <MedicalServices className="w-12 h-12 text-violet-600 group-hover:text-violet-700 transition-colors duration-300" />,
+    icon: <MedicalServices className="w-16 h-16 text-violet-600 group-hover:text-violet-700 transition-colors duration-300" />,
   }
 ];
 
