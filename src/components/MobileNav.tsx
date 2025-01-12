@@ -56,15 +56,6 @@ export default function MobileNav() {
                 </li>
                 <li>
                   <a
-                    href="#why-choose-us"
-                    className="block text-gray-600 hover:text-gray-900"
-                    onClick={toggleMenu}
-                  >
-                    למה אנחנו
-                  </a>
-                </li>
-                <li>
-                  <a
                     href="#contact"
                     className="inline-block bg-gray-900 text-white px-6 py-2 rounded-md hover:bg-black transition-colors duration-300"
                     onClick={toggleMenu}

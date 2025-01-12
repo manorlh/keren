@@ -44,15 +44,6 @@ export const metadata: Metadata = {
         height: 630,
         alt: 'קרן להגאני - משרד עו״ד מוביל לרשלנות רפואית',
         type: 'image/jpeg',
-        secureUrl: 'https://keren-tau.vercel.app/images/lawyer.jpg',
-      },
-      {
-        url: 'https://keren-tau.vercel.app/images/lawyer-square.jpeg',
-        width: 600,
-        height: 600,
-        alt: 'קרן להגאני - משרד עו״ד מוביל לרשלנות רפואית',
-        type: 'image/jpeg',
-        secureUrl: 'https://keren-tau.vercel.app/images/lawyer-square.jpeg',
       }
     ],
   },
@@ -68,9 +59,18 @@ export const metadata: Metadata = {
     canonical: 'https://keren-tau.vercel.app'
   },
   other: {
+    'og:title': 'קרן להגאני - משרד עו״ד מוביל לרשלנות רפואית',
+    'og:description': 'משרדנו מתמחה בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי ומימוש זכויותיכם',
+    'og:url': 'https://keren-tau.vercel.app',
+    'og:site_name': 'קרן להגאני - משרד עורכי דין',
+    'og:locale': 'he_IL',
+    'og:type': 'website',
+    'og:image': 'https://keren-tau.vercel.app/images/lawyer.jpg',
+    'og:image:secure_url': 'https://keren-tau.vercel.app/images/lawyer.jpg',
     'og:image:width': '1200',
     'og:image:height': '630',
     'og:image:type': 'image/jpeg',
+    'og:image:alt': 'קרן להגאני - משרד עו״ד מוביל לרשלנות רפואית',
   }
 };
 
@@ -93,7 +93,6 @@ export default function RootLayout({
               <div className="hidden md:flex items-center gap-8">
                 <a href="#about" className="text-gray-600 hover:text-gray-900">אודות</a>
                 <a href="#practice-areas" className="text-gray-600 hover:text-gray-900">תחומי התמחות</a>
-                <a href="#why-choose-us" className="text-gray-600 hover:text-gray-900">למה אנחנו</a>
                 <a
                   href="#contact"
                   className="bg-gray-900 text-white px-6 py-2 rounded-md hover:bg-black transition-colors duration-300"
