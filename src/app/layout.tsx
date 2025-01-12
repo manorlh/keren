@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     description: 'משרדנו מתמחה בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי ומימוש זכויותיכם',
     images: [
       {
-        url: 'https://www.klh-law.co.il/images/lawyer.jpg',
+        url: 'https://www.klh-law.co.il/images/lawyer1200-630.jpg',
         width: 1200,
         height: 630,
         alt: 'קרן להגאני - משרד עו״ד מוביל לרשלנות רפואית',
@@ -65,8 +65,8 @@ export const metadata: Metadata = {
     'og:site_name': 'קרן להגאני - משרד עורכי דין',
     'og:locale': 'he_IL',
     'og:type': 'website',
-    'og:image': 'https://www.klh-law.co.il/images/lawyer.jpg',
-    'og:image:secure_url': 'https://www.klh-law.co.il/images/lawyer.jpg',
+    'og:image': 'https://www.klh-law.co.il/images/lawyer1200-630.jpg',
+    'og:image:secure_url': 'https://www.klh-law.co.il/images/lawyer1200-630.jpg',
     'og:image:width': '1200',
     'og:image:height': '630',
     'og:image:type': 'image/jpeg',
