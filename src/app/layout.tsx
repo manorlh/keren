@@ -4,6 +4,7 @@ import MobileNav from '@/components/MobileNav';
 import Footer from '@/components/Footer';
 import Link from "next/link";
 import type {Metadata} from 'next';
+import AccessibilityWidget from '@/components/AccessibilityWidget';
 
 const rubik = Rubik({
   subsets: ['latin', 'hebrew'],
@@ -65,6 +66,7 @@ export default function RootLayout({
   return (
     <html lang="he" dir="rtl" className="scroll-smooth">
       <body className={rubik.className}>
+        <AccessibilityWidget />
         <header className="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
           <nav className="container mx-auto px-6 py-3">
             <div className="flex items-center justify-between">
