@@ -10,7 +10,7 @@ export default function Hero() {
           src="/images/lawyer.jpg"
           alt="תמונת עורכת דין"
           fill
-          className="object-cover md:object-[15%_center] object-[65%_center]"
+          className="object-cover 2xl:object-[50%_center] xl:object-[50%_center] lg:object-[50%_center] md:object-[50%_center] object-[60%_center]"
           priority
         />
       </div>
@@ -20,7 +20,7 @@ export default function Hero() {
 
       {/* Content */}
       <div className="container mx-auto px-4 md:px-6 relative z-20 pb-12 md:pb-0" dir="ltr">
-        <div className="w-full md:w-[35%] lg:w-auto lg:max-w-xl">
+        <div className="w-full md:w-[50%] lg:w-auto lg:max-w-xl">
           <div>
             {/* Mobile Content */}
             <div className="md:hidden">
