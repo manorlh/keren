@@ -37,13 +37,24 @@ export const metadata: Metadata = {
     siteName: 'קרן להגאני - משרד עורכי דין',
     title: 'קרן להגאני - משרד עו״ד מוביל לרשלנות רפואית',
     description: 'משרדנו מתמחה בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי ומימוש זכויותיכם',
-    images: [{
-      url: 'https://keren-tau.vercel.app/images/lawyer.jpg',
-      width: 1200,
-      height: 630,
-      alt: 'קרן להגאני - משרד עו״ד מוביל לרשלנות רפואית',
-      type: 'image/jpeg',
-    }],
+    images: [
+      {
+        url: 'https://keren-tau.vercel.app/images/lawyer.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'קרן להגאני - משרד עו״ד מוביל לרשלנות רפואית',
+        type: 'image/jpeg',
+        secureUrl: 'https://keren-tau.vercel.app/images/lawyer.jpg',
+      },
+      {
+        url: 'https://keren-tau.vercel.app/images/lawyer-square.jpeg',
+        width: 600,
+        height: 600,
+        alt: 'קרן להגאני - משרד עו״ד מוביל לרשלנות רפואית',
+        type: 'image/jpeg',
+        secureUrl: 'https://keren-tau.vercel.app/images/lawyer-square.jpeg',
+      }
+    ],
   },
   twitter: {
     card: 'summary_large_image',
@@ -55,6 +66,11 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://keren-tau.vercel.app'
+  },
+  other: {
+    'og:image:width': '1200',
+    'og:image:height': '630',
+    'og:image:type': 'image/jpeg',
   }
 };
 
