@@ -8,9 +8,10 @@ export default function Footer() {
           <div className="text-right">
             <h3 className="text-lg font-semibold mb-4">צור קשר</h3>
             <div className="space-y-2">
-              <p><span className="sr-only">טלפון: </span>054-7932398</p>
+              <p><span className="sr-only">טלפון: </span>054-564-5921</p>
+              <p><span className="sr-only">טלפון: </span>073-283-9503</p>
               <p><span className="sr-only">דוא״ל: </span>keren@klh-law.co.il</p>
-              <p><span className="sr-only">כתובת: </span>יגאל אלון 65, תל אביב</p>
+              <p><span className="sr-only">כתובת: </span>האחים בז&#39;רנו 7, מתחם הבורסה, רמת גן</p>
             </div>
           </div>
 
