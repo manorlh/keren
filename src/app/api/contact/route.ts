@@ -17,7 +17,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const data = await resend.emails.send({
+    await resend.emails.send({
       from: 'Contact Form <onboarding@resend.dev>', // Update this with your verified domain
       to: "manor21@gmail.com", // The email where you want to receive notifications
       subject: `New Contact Form Submission from ${name}`,
