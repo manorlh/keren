@@ -17,8 +17,8 @@ export async function POST(request: Request) {
       );
     }
 
-    await resend.emails.send({
-      from: 'Contact Form <onboarding@resend.dev>', // Update this with your verified domain
+    const result = await resend.emails.send({
+      from: 'manor@yourlogohere.app', // Update this with your verified domain
       to: "keren@klh-law.co.il", // The email where you want to receive notifications
       subject: `New Contact Form Submission from ${name}`,
       html: `
@@ -31,6 +31,7 @@ export async function POST(request: Request) {
       `,
       ...(email && { replyTo: email }), // Only add replyTo if email is provided
     });
+    console.log("result",result)
 
     return NextResponse.json(
       { message: 'Email sent successfully' },
