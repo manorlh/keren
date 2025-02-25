@@ -1,14 +1,23 @@
 'use client';
 
 import React, { useState } from 'react';
+import toast from 'react-hot-toast';
 
 export default function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [phoneError, setPhoneError] = useState('');
 
   const isValidIsraeliPhone = (phone: string) => {
-    const regex = /^(?:(?:(\+972)|0)(?:-)?([23489])|0([23489]))(?:-)?([0-9]{3})(?:-)?([0-9]{4})$/;
-    return regex.test(phone.replace(/\D/g, ''));
+    // Clean the phone number from any non-digit characters
+    const cleanPhone = phone.replace(/\D/g, '');
+    
+    // Check for valid formats:
+    // 1. With country code: +972XXXXXXXXX or 972XXXXXXXXX
+    // 2. Without country code: 0XXXXXXXXX
+    const withPrefixRegex = /^(?:972|\+972)([23459]\d{8})$/;
+    const withoutPrefixRegex = /^0([23459]\d{8})$/;
+    
+    return withPrefixRegex.test(cleanPhone) || withoutPrefixRegex.test(cleanPhone);
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -44,10 +53,26 @@ export default function ContactForm() {
       }
 
       form.reset();
-      alert('ההודעה נשלחה בהצלחה!');
+      toast.success('ההודעה נשלחה בהצלחה!', {
+        duration: 4000,
+        position: 'top-center',
+        style: {
+          background: '#10B981',
+          color: '#fff',
+          direction: 'rtl'
+        },
+      });
     } catch (error) {
-      console.error(error)
-      alert('אירעה שגיאה בשליחת ההודעה. אנא נסה שוב מאוחר יותר.');
+      console.error(error);
+      toast.error('אירעה שגיאה בשליחת ההודעה. אנא נסה שוב מאוחר יותר.', {
+        duration: 4000,
+        position: 'top-center',
+        style: {
+          background: '#EF4444',
+          color: '#fff',
+          direction: 'rtl'
+        },
+      });
     } finally {
       setIsSubmitting(false);
     }
@@ -103,8 +128,7 @@ export default function ContactForm() {
             id="email"
             name="email"
             className="w-full px-4 py-2 bg-white border border-gray-300 rounded-md text-right text-gray-900 placeholder-gray-500"
-            placeholder="הכנס את כתובת הדוא״ל שלך"
-            required
+            placeholder="הכנס את כתובת הדוא״ל שלך (לא חובה)"
           />
         </div>
         <div>
