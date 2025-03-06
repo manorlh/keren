@@ -4,6 +4,9 @@ import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 
+
+
+
 export default function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -54,6 +57,15 @@ export default function MobileNav() {
                     תחומי התמחות
                   </a>
                 </li>
+                  <li>
+                    <a
+                      href="#success-stories"
+                      className="block text-gray-600 hover:text-gray-900"
+                      onClick={toggleMenu}
+                    >
+                      סיפורי הצלחה
+                    </a>
+                  </li>
                 <li>
                   <a
                     href="#contact"

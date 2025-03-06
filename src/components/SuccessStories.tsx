@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Article } from '@/lib/contentful';
 import { CalendarIcon, ArrowLeftIcon, TagIcon } from '@heroicons/react/24/outline';
@@ -11,9 +11,29 @@ interface SuccessStoriesProps {
 
 export default function SuccessStories({ articles }: SuccessStoriesProps) {
   const [showAll, setShowAll] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   
-  // Show only 6 articles initially, or all if showAll is true
-  const displayedArticles = showAll ? articles : articles.slice(0, 6);
+  // Check if the device is mobile on component mount and window resize
+  useEffect(() => {
+    const checkIfMobile = () => {
+      setIsMobile(window.innerWidth < 768); // 768px is the standard md breakpoint in Tailwind
+    };
+    
+    // Initial check
+    checkIfMobile();
+    
+    // Add event listener for window resize
+    window.addEventListener('resize', checkIfMobile);
+    
+    // Cleanup
+    return () => window.removeEventListener('resize', checkIfMobile);
+  }, []);
+  
+  // Determine how many articles to show initially
+  const initialArticleCount = isMobile ? 2 : 6;
+  
+  // Show only the initial count of articles, or all if showAll is true
+  const displayedArticles = showAll ? articles : articles.slice(0, initialArticleCount);
   
   return (
     <section className="py-20 bg-white" id="success-stories" aria-labelledby="success-stories-heading">
@@ -100,7 +120,7 @@ export default function SuccessStories({ articles }: SuccessStoriesProps) {
           })}
         </div>
         
-        {articles.length > 6 && !showAll && (
+        {articles.length > (isMobile ? 2 : 6) && !showAll && (
           <div className="mt-12 text-center">
             <button
               onClick={() => setShowAll(true)}
