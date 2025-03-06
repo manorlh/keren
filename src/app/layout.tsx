@@ -7,7 +7,6 @@ import type {Metadata} from 'next';
 import AccessibilityWidget from '@/components/AccessibilityWidget';
 import {Analytics} from "@vercel/analytics/react"
 import {Toaster} from 'react-hot-toast';
-import { getArticles } from '@/lib/contentful';
 import WhatsAppButton from '@/components/WhatsAppButton';
 
 const rubik = Rubik({
