@@ -37,13 +37,13 @@ export default function Hero() {
               <div className="flex flex-col sm:flex-row gap-2 lg:gap-4 justify-start">
                 <Link 
                   href="#contact"
-                  className="bg-gray-900/90 text-white px-3 sm:px-4 lg:px-8 py-1.5 sm:py-2 lg:py-4 rounded-md text-xs sm:text-sm lg:text-lg font-semibold hover:bg-black transition-colors duration-300 text-center sm:text-right backdrop-blur-sm"
+                  className="bg-gray-900/90 text-white px-3 sm:px-4 lg:px-8 py-1.5 sm:py-2 lg:py-4 rounded-md text-sm sm:text-sm lg:text-lg font-semibold hover:bg-black transition-colors duration-300 text-center sm:text-right backdrop-blur-sm"
                 >
                   לייעוץ ראשוני ללא עלות
                 </Link>
-                <Link 
+                <Link
                   href="#practice-areas"
-                  className="bg-white/90 text-gray-900 px-3 sm:px-4 lg:px-8 py-1.5 sm:py-2 lg:py-4 rounded-md text-xs sm:text-sm lg:text-lg font-semibold hover:bg-white transition-colors duration-300 text-center sm:text-right backdrop-blur-sm"
+                  className="bg-white/90 text-gray-900 px-3 sm:px-4 lg:px-8 py-1.5 sm:py-2 lg:py-4 rounded-md text-sm sm:text-sm lg:text-lg font-semibold hover:bg-white transition-colors duration-300 text-center sm:text-right backdrop-blur-sm"
                 >
                   תחומי התמחות
                 </Link>
@@ -69,7 +69,7 @@ export default function Hero() {
                 >
                   לייעוץ ראשוני ללא עלות
                 </Link>
-                <Link 
+                <Link
                   href="#practice-areas"
                   className="bg-white/90 text-gray-900 px-3 sm:px-4 lg:px-8 py-1.5 sm:py-2 lg:py-4 rounded-md text-xs sm:text-sm lg:text-lg font-semibold hover:bg-white transition-colors duration-300 text-center sm:text-right backdrop-blur-sm"
                 >
