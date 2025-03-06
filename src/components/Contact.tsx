@@ -3,7 +3,7 @@ import ContactForm from './ContactForm';
 
 export default function Contact() {
   return (
-    <section className="min-h-screen flex flex-col md:flex-row-reverse bg-white" id="contact">
+    <section className="min-h-screen flex flex-col md:flex-row-reverse bg-gray-50" id="contact">
       {/* Image Section */}
       <div className="w-full md:w-1/2 h-[40vh] md:h-screen flex items-center justify-center">
         <Image
@@ -27,7 +27,7 @@ export default function Contact() {
 
             <div className="space-y-6">
               {/* Direct Contact Option */}
-              <div className="bg-gray-50 rounded-lg p-6">
+              <div className="bg-white rounded-lg p-6">
                 <h3 className="text-xl font-semibold text-gray-900 mb-4 text-right">התקשרות ישירה</h3>
                 <div className="space-y-4 flex flex-col items-start">
                   <a href="tel:054-564-5921" className="flex items-center justify-end gap-2 text-gray-700 hover:text-gray-900 transition-colors">

@@ -79,7 +79,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="bg-gray-50 rounded-lg p-6">
+    <div className="bg-white rounded-lg p-6">
       <h3 className="text-xl font-semibold text-gray-900 mb-4 text-right">השארת פרטים</h3>
       <p className="text-gray-700 text-right mb-4">מלאו את הטופס ונחזור אליכם בהקדם</p>
       <form className="space-y-4" onSubmit={handleSubmit}>
