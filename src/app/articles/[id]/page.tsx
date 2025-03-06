@@ -15,7 +15,7 @@ interface ArticlePageProps {
 // Generate metadata for better SEO
 export async function generateMetadata(
   { params }: ArticlePageProps,
-  parent: ResolvingMetadata
+  // parent: ResolvingMetadata
 ): Promise<Metadata> {
   try {
     const article = await getArticleById(params.id);
