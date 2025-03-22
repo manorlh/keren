@@ -57,7 +57,7 @@ export default function MobileNav() {
                     תחומי התמחות
                   </a>
                 </li>
-                  <li>
+                  {/* <li>
                     <a
                       href="#success-stories"
                       className="block text-gray-600 hover:text-gray-900"
@@ -65,7 +65,7 @@ export default function MobileNav() {
                     >
                       סיפורי הצלחה
                     </a>
-                  </li>
+                  </li> */}
                 <li>
                   <a
                     href="#contact"

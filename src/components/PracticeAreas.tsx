@@ -51,23 +51,23 @@ export default function PracticeAreas() {
     <section className="py-20 bg-gray-50" id="practice-areas">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">תחומי התמחות</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">תחומי התמחות</h2>
+          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
             אנו מתמחים בכל סוגי תיק הרשלנות ונלחמים עבור לקוחותינו
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
           {practices.map((practice) => (
             <div
               key={practice.title}
-              className="group bg-white p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1"
+              className="group bg-white p-4 md:p-8 rounded-lg shadow-sm hover:shadow-md transition-all duration-300 transform hover:-translate-y-1"
             >
-              <div className="mb-6 flex justify-center">
+              <div className="mb-4 md:mb-6 flex justify-center">
                 {practice.icon}
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">{practice.title}</h3>
-              <p className="text-gray-600">{practice.description}</p>
+              <h3 className="text-base md:text-xl font-semibold text-gray-900 mb-2 md:mb-4">{practice.title}</h3>
+              <p className="text-sm md:text-base text-gray-600">{practice.description}</p>
             </div>
           ))}
         </div>

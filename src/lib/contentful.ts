@@ -1,4 +1,5 @@
 import { createClient } from 'contentful';
+import { Document } from '@contentful/rich-text-types';
 
 // Initialize Contentful client
 export const contentfulClient = createClient({
@@ -10,7 +11,7 @@ export const contentfulClient = createClient({
 export interface ArticleFields {
   title: string;
   publishedDate: string;
-  content: any; // Rich text content
+  content: Document; // Rich text content properly typed as Document
   featuredImage: {
     fields: {
       file: {
@@ -20,7 +21,7 @@ export interface ArticleFields {
     };
   };
   tags: string[];
-  relatedArticles: any[];
+  relatedArticles: Article[];
   author: string;
   description: string;
 }
@@ -43,7 +44,7 @@ export async function getArticles(): Promise<Article[]> {
   try {
     const response = await contentfulClient.getEntries({
       content_type: 'article',
-      order: '-fields.publishedDate',
+      order: ['-fields.publishedDate'],
     });
     
     return response.items as unknown as Article[];

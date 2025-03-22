@@ -101,7 +101,7 @@ export default async function RootLayout({
               <div className="hidden md:flex items-center gap-8">
                 <a href="#about" className="text-gray-600 hover:text-gray-900">אודות</a>
                 <a href="#practice-areas" className="text-gray-600 hover:text-gray-900">תחומי התמחות</a>
-                  <a href="#success-stories" className="text-gray-600 hover:text-gray-900">סיפורי הצלחה</a>
+                  {/* <a href="#success-stories" className="text-gray-600 hover:text-gray-900">סיפורי הצלחה</a> */}
                 <a
                   href="#contact"
                   className="bg-gray-900 text-white px-6 py-2 rounded-md hover:bg-black transition-colors duration-300"

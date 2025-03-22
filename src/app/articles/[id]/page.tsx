@@ -3,19 +3,19 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getArticleById, getArticles } from '@/lib/contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types';
-import { Metadata, ResolvingMetadata } from 'next';
+import { BLOCKS, INLINES, MARKS, Block, Inline } from '@contentful/rich-text-types';
+import { Metadata } from 'next';
 
 interface ArticlePageProps {
   params: {
     id: string;
   };
+  searchParams: Record<string, string | string[] | undefined>;
 }
 
 // Generate metadata for better SEO
 export async function generateMetadata(
   { params }: ArticlePageProps,
-  // parent: ResolvingMetadata
 ): Promise<Metadata> {
   try {
     const article = await getArticleById(params.id);
@@ -85,21 +85,21 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         [MARKS.CODE]: (text: React.ReactNode) => <code className="text-black bg-gray-100 px-1 rounded">{text}</code>,
       },
       renderNode: {
-        [BLOCKS.PARAGRAPH]: (node: any, children: React.ReactNode) => <p className="mb-4 text-black">{children}</p>,
-        [BLOCKS.HEADING_1]: (node: any, children: React.ReactNode) => <h1 className="text-3xl font-bold mb-4 text-black">{children}</h1>,
-        [BLOCKS.HEADING_2]: (node: any, children: React.ReactNode) => <h2 className="text-2xl font-bold mb-3 text-black">{children}</h2>,
-        [BLOCKS.HEADING_3]: (node: any, children: React.ReactNode) => <h3 className="text-xl font-bold mb-2 text-black">{children}</h3>,
-        [BLOCKS.HEADING_4]: (node: any, children: React.ReactNode) => <h4 className="text-lg font-bold mb-2 text-black">{children}</h4>,
-        [BLOCKS.HEADING_5]: (node: any, children: React.ReactNode) => <h5 className="text-base font-bold mb-2 text-black">{children}</h5>,
-        [BLOCKS.HEADING_6]: (node: any, children: React.ReactNode) => <h6 className="text-sm font-bold mb-2 text-black">{children}</h6>,
-        [BLOCKS.UL_LIST]: (node: any, children: React.ReactNode) => <ul className="list-disc pl-6 mb-4 text-black">{children}</ul>,
-        [BLOCKS.OL_LIST]: (node: any, children: React.ReactNode) => <ol className="list-decimal pl-6 mb-4 text-black">{children}</ol>,
-        [BLOCKS.LIST_ITEM]: (node: any, children: React.ReactNode) => <li className="mb-1 text-black">{children}</li>,
-        [BLOCKS.QUOTE]: (node: any, children: React.ReactNode) => (
+        [BLOCKS.PARAGRAPH]: (node: Block | Inline, children: React.ReactNode) => <p className="mb-4 text-black">{children}</p>,
+        [BLOCKS.HEADING_1]: (node: Block | Inline, children: React.ReactNode) => <h1 className="text-3xl font-bold mb-4 text-black">{children}</h1>,
+        [BLOCKS.HEADING_2]: (node: Block | Inline, children: React.ReactNode) => <h2 className="text-2xl font-bold mb-3 text-black">{children}</h2>,
+        [BLOCKS.HEADING_3]: (node: Block | Inline, children: React.ReactNode) => <h3 className="text-xl font-bold mb-2 text-black">{children}</h3>,
+        [BLOCKS.HEADING_4]: (node: Block | Inline, children: React.ReactNode) => <h4 className="text-lg font-bold mb-2 text-black">{children}</h4>,
+        [BLOCKS.HEADING_5]: (node: Block | Inline, children: React.ReactNode) => <h5 className="text-base font-bold mb-2 text-black">{children}</h5>,
+        [BLOCKS.HEADING_6]: (node: Block | Inline, children: React.ReactNode) => <h6 className="text-sm font-bold mb-2 text-black">{children}</h6>,
+        [BLOCKS.UL_LIST]: (node: Block | Inline, children: React.ReactNode) => <ul className="list-disc pl-6 mb-4 text-black">{children}</ul>,
+        [BLOCKS.OL_LIST]: (node: Block | Inline, children: React.ReactNode) => <ol className="list-decimal pl-6 mb-4 text-black">{children}</ol>,
+        [BLOCKS.LIST_ITEM]: (node: Block | Inline, children: React.ReactNode) => <li className="mb-1 text-black">{children}</li>,
+        [BLOCKS.QUOTE]: (node: Block | Inline, children: React.ReactNode) => (
           <blockquote className="border-r-4 border-gray-300 pr-4 italic my-4 text-black">{children}</blockquote>
         ),
         [BLOCKS.HR]: () => <hr className="my-6" />,
-        [INLINES.HYPERLINK]: (node: any, children: React.ReactNode) => (
+        [INLINES.HYPERLINK]: (node: Block | Inline, children: React.ReactNode) => (
           <a href={node.data.uri} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
             {children}
           </a>
