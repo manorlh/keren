@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import Link from 'next/link';
 
 
 
@@ -57,15 +58,15 @@ export default function MobileNav() {
                     תחומי התמחות
                   </a>
                 </li>
-                  {/* <li>
-                    <a
-                      href="#success-stories"
-                      className="block text-gray-600 hover:text-gray-900"
-                      onClick={toggleMenu}
-                    >
-                      סיפורי הצלחה
-                    </a>
-                  </li> */}
+                <li>
+                  <Link
+                    href="/signature-verification"
+                    className="block text-gray-600 hover:text-gray-900"
+                    onClick={toggleMenu}
+                  >
+                    אימות חתימה
+                  </Link>
+                </li>
                 <li>
                   <a
                     href="#contact"
