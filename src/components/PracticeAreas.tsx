@@ -10,17 +10,17 @@ import {
 
 const practices = [
   {
-    title: 'טעויות בניתוח',
+    title: 'רשלנות בניתוחים',
     description: 'ייצוג קורבנות של טעויות כירורגיות, בניתוחים כירורגים, אורתופדים, גניקולוגים, פלסטיים, אורולוגים, לבביים ועוד',
     icon: <LocalHospital sx={{ fontSize: '4rem' }} className="text-red-600 group-hover:text-red-700 transition-colors duration-300" />,
   },
   {
-    title: 'אבחון שגוי',
+    title: 'רשלנות באבחון',
     description: 'רשלנות בגין איחור באבחון, החמצת אבחון או אבחון שגוי של מצבים רפואיים כדוגמת מחלות סרטן, מחלות כרוניות, מומים בעובר ועוד',
     icon: <Search sx={{ fontSize: '4rem' }} className="text-blue-600 group-hover:text-blue-700 transition-colors duration-300" />,
   },
   {
-    title: 'פענוח שגוי',
+    title: 'רשלנות בפענוח',
     description: 'פענוח שגוי של בדיקות הדמייה כולל אולטרה-סאונד,צילום רנטגן, CT, MRI, PET CT, בדיקות מעבדה ובדיקות אחרות',
     icon: <ImageSearch sx={{ fontSize: '4rem' }} className="text-indigo-600 group-hover:text-indigo-700 transition-colors duration-300" />,
   },
@@ -30,8 +30,8 @@ const practices = [
     icon: <PregnantWoman sx={{ fontSize: '4rem' }} className="text-rose-400 group-hover:text-rose-500 transition-colors duration-300" />,
   },
   {
-    title: 'טעויות בתרופות',
-    description: 'תיקים הכוללים מתן תרופה שגויה, מינון שגוי ואינטראקציות מסוכנות בין תרופות',
+    title: 'רשלנות בתרופות',
+    description: 'רשלנויות הכוללות מתן תרופה שגויה, מינון שגוי ואינטראקציות מסוכנות בין תרופות',
     icon: <Medication sx={{ fontSize: '4rem' }} className="text-emerald-600 group-hover:text-emerald-700 transition-colors duration-300" />,
   },
   {
