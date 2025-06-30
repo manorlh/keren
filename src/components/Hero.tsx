@@ -29,10 +29,10 @@ export default function Hero() {
                 <span className="block text-base sm:text-lg lg:text-3xl mt-2 lg:mt-4 font-light">משרד עו״ד מוביל לרשלנות רפואית</span>
               </h1>
               <p className="text-sm sm:text-base lg:text-2xl mb-2 lg:mb-4 text-right text-white drop-shadow-lg">
-                משרד העוסק בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי. הקול הבלתי מתפשר שלכם בבית המשפט
+                משרד העוסק בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי
               </p>
               <p className="text-xs sm:text-sm lg:text-xl mb-4 lg:mb-8 text-gray-100 font-light text-right drop-shadow-lg">
-                מומחים לרשלנות רפואית ונזקי גוף - הקול שלכם בבית משפט
+                משרד העוסק ברשלנות רפואית ונזקי גוף - הקול שלכם בבית משפט
               </p>
               <div className="flex flex-col sm:flex-row gap-2 lg:gap-4 justify-start">
                 <Link 
@@ -60,7 +60,7 @@ export default function Hero() {
                 משרד העוסק בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי
               </p>
               <p className="text-xs sm:text-sm lg:text-xl mb-4 lg:mb-8 text-gray-100 font-light text-right drop-shadow-lg">
-                מומחים לרשלנות רפואית ונזקי גוף - הקול שלכם בבית משפט
+                משרד העוסק ברשלנות רפואית ונזקי גוף - הקול שלכם בבית משפט
               </p>
               <div className="flex flex-col sm:flex-row gap-2 lg:gap-4 justify-start">
                 <Link 

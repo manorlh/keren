@@ -8,6 +8,7 @@ import AccessibilityWidget from '@/components/AccessibilityWidget';
 import {Analytics} from "@vercel/analytics/react"
 import {Toaster} from 'react-hot-toast';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import ScrollToTopButton from '@/components/ScrollToTopButton';
 
 const rubik = Rubik({
   subsets: ['latin', 'hebrew'],
@@ -16,7 +17,7 @@ const rubik = Rubik({
 
 export const metadata: Metadata = {
   title: 'קרן להגאני - משרד עורכי דין',
-  description: 'מומחים בתביעות רשלנות רפואית',
+  description: 'עוסקים בתביעות רשלנות רפואית',
   metadataBase: new URL('https://www.klh-law.co.il'),
   icons: {
     icon: [
@@ -91,6 +92,7 @@ export default async function RootLayout({
         <Analytics/>
         <AccessibilityWidget />
         <WhatsAppButton />
+        <ScrollToTopButton />
         <header className="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
           <nav className="container mx-auto px-6 py-3">
             <div className="flex items-center justify-between">
