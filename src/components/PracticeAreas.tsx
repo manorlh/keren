@@ -5,7 +5,9 @@ import {
   PregnantWoman,
   Medication,
   Business,
-  MedicalServices
+  MedicalServices,
+  DirectionsCar,
+  ReportProblem
 } from '@mui/icons-material';
 
 const practices = [
@@ -43,6 +45,16 @@ const practices = [
     title: 'רשלנות ברפואת שיניים',
     description: 'אבחון שגוי או מאוחר של בעיות שיניים וחניכיים, טיפולי שורש, עקירות או השתלות שבוצעו ברשלנות, פגיעות עצביות שנגרמו במהלך טיפול, יישום לקוי של גשרים, כתרים ועוד',
     icon: <MedicalServices sx={{ fontSize: '4rem' }} className="text-violet-600 group-hover:text-violet-700 transition-colors duration-300" />,
+  },
+  {
+    title: 'תאונות דרכים',
+    description: 'נזקי גוף שנגרמו בעקבות שימוש ברכב מנועי, רכיבה בעקבות נסיעה בו, כניסה או יציאה ממנו, חניה, דחיפה, גרירה, טיפול דרך ואף התלקחותו',
+    icon: <DirectionsCar sx={{ fontSize: '4rem' }} className="text-orange-600 group-hover:text-orange-700 transition-colors duration-300" />,
+  },
+  {
+    title: 'תאונות במרחב הציבורי',
+    description: 'חבלות כתוצאה ממפגעים או תשתיות ציבוריים פגומים כגון מדרכה פגומה, חבלות בעקבות מתקן ציבורי מסוכן, חבלות כתוצאה מריצוף רטוב בבית עסק או בית מלון ועוד',
+    icon: <ReportProblem sx={{ fontSize: '4rem' }} className="text-amber-600 group-hover:text-amber-700 transition-colors duration-300" />,
   }
 ];
 
@@ -53,7 +65,7 @@ export default function PracticeAreas() {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">תחומי עיסוק</h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-            אנו מתמחים בכל סוגי תיק הרשלנות ונלחמים עבור לקוחותינו
+            אנו עוסקים בכל סוגי תיק הרשלנות ונלחמים עבור לקוחותינו
           </p>
         </div>
 
