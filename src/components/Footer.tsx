@@ -40,7 +40,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">קישורים מהירים</h3>
             <ul className="space-y-2">
               <li><a href="#about" className="hover:text-gray-300">אודות</a></li>
-              <li><a href="#practice-areas" className="hover:text-gray-300">תחומי התמחות</a></li>
+              <li><a href="#practice-areas" className="hover:text-gray-300">תחומי עיסוק</a></li>
               <li><a href="#contact" className="hover:text-gray-300">צור קשר</a></li>
             </ul>
           </nav>

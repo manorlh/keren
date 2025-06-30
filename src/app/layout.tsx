@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     url: 'https://www.klh-law.co.il',
     siteName: 'קרן להגאני - משרד עורכי דין',
     title: 'קרן להגאני - משרד עו״ד מוביל לרשלנות רפואית',
-    description: 'משרדנו מתמחה בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי ומימוש זכויותיכם',
+    description: 'משרד העוסק בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי ומימוש זכויותיכם',
     images: [
       {
         url: 'https://www.klh-law.co.il/images/lawyer1200-630-comp.jpg',
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     site: '@kerenlahagani',
     title: 'קרן להגאני - משרד עו״ד מוביל לרשלנות רפואית',
-    description: 'משרדנו מתמחה בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי ומימוש זכויותיכם',
+    description: 'משרד העוסק בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי ומימוש זכויותיכם',
     images: ['https://www.klh-law.co.il/images/lawyer.jpg'],
     creator: '@kerenlahagani',
   },
@@ -63,7 +63,7 @@ export const metadata: Metadata = {
   },
   other: {
     'og:title': 'קרן להגאני - משרד עו״ד מוביל לרשלנות רפואית',
-    'og:description': 'משרדנו מתמחה בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי ומימוש זכויותיכם',
+    'og:description': 'משרד העוסק בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי.',
     'og:url': 'https://www.klh-law.co.il',
     'og:site_name': 'קרן להגאני - משרד עורכי דין',
     'og:locale': 'he_IL',
@@ -100,7 +100,7 @@ export default async function RootLayout({
               </Link>
               <div className="hidden md:flex items-center gap-8">
                 <a href="#about" className="text-gray-600 hover:text-gray-900">אודות</a>
-                <a href="#practice-areas" className="text-gray-600 hover:text-gray-900">תחומי התמחות</a>
+                <a href="#practice-areas" className="text-gray-600 hover:text-gray-900">תחומי עיסוק</a>
                   {/* <a href="#success-stories" className="text-gray-600 hover:text-gray-900">סיפורי הצלחה</a> */}
                 <a
                   href="#contact"

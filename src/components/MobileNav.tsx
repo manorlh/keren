@@ -54,7 +54,7 @@ export default function MobileNav() {
                     className="block text-gray-600 hover:text-gray-900"
                     onClick={toggleMenu}
                   >
-                    תחומי התמחות
+                    תחומי עיסוק
                   </a>
                 </li>
                   {/* <li>

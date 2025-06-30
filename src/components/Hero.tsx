@@ -29,7 +29,7 @@ export default function Hero() {
                 <span className="block text-base sm:text-lg lg:text-3xl mt-2 lg:mt-4 font-light">משרד עו״ד מוביל לרשלנות רפואית</span>
               </h1>
               <p className="text-sm sm:text-base lg:text-2xl mb-2 lg:mb-4 text-right text-white drop-shadow-lg">
-                משרדנו מתמחה בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי
+                משרד העוסק בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי. הקול הבלתי מתפשר שלכם בבית המשפט
               </p>
               <p className="text-xs sm:text-sm lg:text-xl mb-4 lg:mb-8 text-gray-100 font-light text-right drop-shadow-lg">
                 מומחים לרשלנות רפואית ונזקי גוף - הקול שלכם בבית משפט
@@ -45,7 +45,7 @@ export default function Hero() {
                   href="#practice-areas"
                   className="bg-white/90 text-gray-900 px-3 sm:px-4 lg:px-8 py-1.5 sm:py-2 lg:py-4 rounded-md text-sm sm:text-sm lg:text-lg font-semibold hover:bg-white transition-colors duration-300 text-center sm:text-right backdrop-blur-sm"
                 >
-                  תחומי התמחות
+                  תחומי עיסוק
                 </Link>
               </div>
             </div>
@@ -57,7 +57,7 @@ export default function Hero() {
                 <span className="block text-base sm:text-lg lg:text-3xl mt-2 lg:mt-4 font-light">משרד עו״ד מוביל לרשלנות רפואית</span>
               </h1>
               <p className="text-sm sm:text-base lg:text-2xl mb-2 lg:mb-4 text-right text-white drop-shadow-lg">
-                משרדנו מתמחה בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי
+                משרד העוסק בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי
               </p>
               <p className="text-xs sm:text-sm lg:text-xl mb-4 lg:mb-8 text-gray-100 font-light text-right drop-shadow-lg">
                 מומחים לרשלנות רפואית ונזקי גוף - הקול שלכם בבית משפט
@@ -73,7 +73,7 @@ export default function Hero() {
                   href="#practice-areas"
                   className="bg-white/90 text-gray-900 px-3 sm:px-4 lg:px-8 py-1.5 sm:py-2 lg:py-4 rounded-md text-xs sm:text-sm lg:text-lg font-semibold hover:bg-white transition-colors duration-300 text-center sm:text-right backdrop-blur-sm"
                 >
-                  תחומי התמחות
+                  תחומי עיסוק
                 </Link>
               </div>
             </div>
