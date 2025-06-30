@@ -32,7 +32,7 @@ const practices = [
     icon: <PregnantWoman sx={{ fontSize: '4rem' }} className="text-rose-400 group-hover:text-rose-500 transition-colors duration-300" />,
   },
   {
-    title: 'רשלנות בתרופות',
+    title: 'רשלנות במתן בתרופות',
     description: 'רשלנויות הכוללות מתן תרופה שגויה, מינון שגוי ואינטראקציות מסוכנות בין תרופות',
     icon: <Medication sx={{ fontSize: '4rem' }} className="text-emerald-600 group-hover:text-emerald-700 transition-colors duration-300" />,
   },
@@ -48,12 +48,11 @@ const practices = [
   },
   {
     title: 'תאונות דרכים',
-    description: 'נזקי גוף שנגרמו בעקבות שימוש ברכב מנועי, רכיבה בעקבות נסיעה בו, כניסה או יציאה ממנו, חניה, דחיפה, גרירה, טיפול דרך ואף התלקחותו',
-    icon: <DirectionsCar sx={{ fontSize: '4rem' }} className="text-orange-600 group-hover:text-orange-700 transition-colors duration-300" />,
+    description: 'נזקי גוף שנגרמו בעקבות שימוש ברכב מנועי, לרבות בעקבות נסיעה בו, כניסה או יציאה ממנו, חניה, דחיפה, גרירה, טיפול דרך ואף התלקחותו    icon: <DirectionsCar sx={{ fontSize: '4rem' }} className="text-orange-600 group-hover:text-orange-700 transition-colors duration-300" />,
   },
   {
     title: 'תאונות במרחב הציבורי',
-    description: 'חבלות כתוצאה ממפגעים או תשתיות ציבוריים פגומים כגון מדרכה פגומה, חבלות בעקבות מתקן ציבורי מסוכן, חבלות כתוצאה מריצוף רטוב בבית עסק או בית מלון ועוד',
+    description: 'חבלות כתוצאה ממפגעים או תשתיות ציבוריים פגומות כגון מדרכה פגומה, חבלות בעקבות מתקן ציבורי מסוכן, חבלות כתוצאה מריצוף רטוב בבית עסק או בית מלון ועוד',
     icon: <ReportProblem sx={{ fontSize: '4rem' }} className="text-amber-600 group-hover:text-amber-700 transition-colors duration-300" />,
   }
 ];
@@ -65,7 +64,7 @@ export default function PracticeAreas() {
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">תחומי עיסוק</h2>
           <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-            אנו עוסקים בכל סוגי תיק הרשלנות ונלחמים עבור לקוחותינו
+            אנו עוסקים בכל סוגי תיקי הרשלנות הרפואית ונזקי הגוף ונלחמים עבור לקוחותינו
           </p>
         </div>
 

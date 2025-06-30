@@ -32,7 +32,7 @@ export default function Hero() {
                 משרד העוסק בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי
               </p>
               <p className="text-xs sm:text-sm lg:text-xl mb-4 lg:mb-8 text-gray-100 font-light text-right drop-shadow-lg">
-                משרד העוסק ברשלנות רפואית ונזקי גוף - הקול שלכם בבית משפט
+                הקול שלכם בבית משפט
               </p>
               <div className="flex flex-col sm:flex-row gap-2 lg:gap-4 justify-start">
                 <Link 
@@ -60,7 +60,7 @@ export default function Hero() {
                 משרד העוסק בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי
               </p>
               <p className="text-xs sm:text-sm lg:text-xl mb-4 lg:mb-8 text-gray-100 font-light text-right drop-shadow-lg">
-                משרד העוסק ברשלנות רפואית ונזקי גוף - הקול שלכם בבית משפט
+                הקול שלכם בבית משפט
               </p>
               <div className="flex flex-col sm:flex-row gap-2 lg:gap-4 justify-start">
                 <Link 
