@@ -48,7 +48,8 @@ const practices = [
   },
   {
     title: 'תאונות דרכים',
-    description: 'נזקי גוף שנגרמו בעקבות שימוש ברכב מנועי, לרבות בעקבות נסיעה בו, כניסה או יציאה ממנו, חניה, דחיפה, גרירה, טיפול דרך ואף התלקחותו    icon: <DirectionsCar sx={{ fontSize: '4rem' }} className="text-orange-600 group-hover:text-orange-700 transition-colors duration-300" />,
+    description: 'נזקי גוף שנגרמו בעקבות שימוש ברכב מנועי, לרבות בעקבות נסיעה בו, כניסה או יציאה ממנו, חניה, דחיפה, גרירה, טיפול דרך ואף התלקחותו',
+    icon: <DirectionsCar sx={{ fontSize: '4rem' }} className="text-orange-600 group-hover:text-orange-700 transition-colors duration-300" />,
   },
   {
     title: 'תאונות במרחב הציבורי',
