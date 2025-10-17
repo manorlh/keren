@@ -18,7 +18,7 @@ const rubik = Rubik({
 export const metadata: Metadata = {
   title: 'קרן להגאני - משרד עורכי דין | עורך דין רשלנות רפואית',
   description: 'קרן להגאני - עורך דין מוביל לרשלנות רפואית ונזקי גוף. ייצוג מקצועי להשגת פיצוי מירבי. התקשרו: 054-564-5921',
-  keywords: 'קרן להגאני, עורך דין רשלנות רפואית, עורך דין נזקי גוף, תביעות רשלנות רפואית, פיצויים, עורך דין תל אביב, keren lahagani, medical malpractice lawyer',
+  keywords: 'קרן להגאני, עורך דין רשלנות רפואית, תביעת רשלנות רפואית, פיצוי רשלנות רפואית, עורך דין מומחה לרשלנות רפואית, עורך דין נזקי גוף, תביעות רשלנות רפואית, פיצויים, עורך דין תל אביב, keren lahagani, medical malpractice lawyer',
   metadataBase: new URL('https://www.klh-law.co.il'),
   icons: {
     icon: [
@@ -105,7 +105,7 @@ export default async function RootLayout({
       "addressCountry": "IL"
     },
     "areaServed": "Israel",
-    "serviceType": ["רשלנות רפואית", "נזקי גוף", "תביעות פיצויים"],
+    "serviceType": ["רשלנות רפואית", "תביעת רשלנות רפואית", "פיצוי רשלנות רפואית", "עורך דין מומחה לרשלנות רפואית", "נזקי גוף", "תביעות פיצויים"],
     "founder": {
       "@type": "Person",
       "name": "קרן להגאני"

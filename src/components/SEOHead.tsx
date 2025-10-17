@@ -11,7 +11,7 @@ interface SEOHeadProps {
 export default function SEOHead({
   title = 'קרן להגאני - עורך דין רשלנות רפואית | ייצוג מקצועי לפיצויים',
   description = 'קרן להגאני - עורך דין מוביל לרשלנות רפואית ונזקי גוף. ייצוג מקצועי להשגת פיצוי מירבי. התקשרו: 054-564-5921',
-  keywords = 'קרן להגאני, עורך דין רשלנות רפואית, עורך דין נזקי גוף, תביעות רשלנות רפואית, פיצויים, עורך דין תל אביב, keren lahagani, medical malpractice lawyer',
+  keywords = 'קרן להגאני, עורך דין רשלנות רפואית, תביעת רשלנות רפואית, פיצוי רשלנות רפואית, עורך דין מומחה לרשלנות רפואית, עורך דין נזקי גוף, תביעות רשלנות רפואית, פיצויים, עורך דין תל אביב, keren lahagani, medical malpractice lawyer',
   canonicalUrl = 'https://www.klh-law.co.il',
   ogImage = 'https://www.klh-law.co.il/images/lawyer1200-630-comp.jpg'
 }: SEOHeadProps) {
