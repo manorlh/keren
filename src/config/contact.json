@@ -1,0 +1,16 @@
+{
+  "contact": {
+    "phones": [
+      "054-564-5921",
+      "03-6025060"
+    ],
+    "fax": "03-6025062",
+    "email": "keren@klh-law.co.il",
+    "address": "יגאל אלון 94 (מגדל אלון 2), תל אביב"
+  },
+  "content": {
+    "contactTitle": "צור קשר",
+    "contactSubtitle": "נשמח לעמוד לרשותכם ולסייע בכל שאלה",
+    "directContactTitle": "התקשרות ישירה"
+  }
+}

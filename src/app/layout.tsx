@@ -16,8 +16,9 @@ const rubik = Rubik({
 });
 
 export const metadata: Metadata = {
-  title: 'קרן להגאני - משרד עורכי דין',
-  description: 'עוסקים בתביעות רשלנות רפואית',
+  title: 'קרן להגאני - משרד עורכי דין | עורך דין רשלנות רפואית',
+  description: 'קרן להגאני - עורך דין מוביל לרשלנות רפואית ונזקי גוף. ייצוג מקצועי להשגת פיצוי מירבי. התקשרו: 054-564-5921',
+  keywords: 'קרן להגאני, עורך דין רשלנות רפואית, עורך דין נזקי גוף, תביעות רשלנות רפואית, פיצויים, עורך דין תל אביב, keren lahagani, medical malpractice lawyer',
   metadataBase: new URL('https://www.klh-law.co.il'),
   icons: {
     icon: [
@@ -85,8 +86,43 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
 
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "LegalService",
+    "name": "קרן להגאני - משרד עורכי דין",
+    "alternateName": "Keren Lahagani Law Office",
+    "description": "משרד עורכי דין מוביל בתחום רשלנות רפואית ונזקי גוף",
+    "url": "https://www.klh-law.co.il",
+    "logo": "https://www.klh-law.co.il/images/logo.webp",
+    "image": "https://www.klh-law.co.il/images/lawyer1200-630-comp.jpg",
+    "telephone": ["054-564-5921", "03-6025060"],
+    "faxNumber": "03-6025062",
+    "email": "keren@klh-law.co.il",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "יגאל אלון 94 (מגדל אלון 2)",
+      "addressLocality": "תל אביב",
+      "addressCountry": "IL"
+    },
+    "areaServed": "Israel",
+    "serviceType": ["רשלנות רפואית", "נזקי גוף", "תביעות פיצויים"],
+    "founder": {
+      "@type": "Person",
+      "name": "קרן להגאני"
+    },
+    "sameAs": [
+      "https://www.klh-law.co.il"
+    ]
+  };
+
   return (
     <html lang="he" dir="rtl" className="scroll-smooth">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </head>
       <body className={rubik.className}>
         <Toaster />
         <Analytics/>

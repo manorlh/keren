@@ -6,7 +6,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const articles = await getArticles();
   
   // Base URL of your website
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://yourdomain.com';
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.klh-law.co.il';
   
   // Create article URLs
   const articleUrls = articles.map((article) => ({
