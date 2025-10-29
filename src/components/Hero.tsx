@@ -26,7 +26,7 @@ export default function Hero() {
             <div className="md:hidden">
               <h1 className="text-2xl sm:text-3xl lg:text-6xl font-bold mb-3 lg:mb-6 text-right text-white drop-shadow-lg">
                 קרן להגאני
-                <span className="block text-base sm:text-lg lg:text-3xl mt-2 lg:mt-4 font-light">משרד עו״ד מוביל לרשלנות רפואית</span>
+                <span className="block text-base sm:text-lg lg:text-3xl mt-2 lg:mt-4 font-light">משרד עו״ד מוביל לרשלנות רפואית ונזקי גוף</span>
               </h1>
               <p className="text-sm sm:text-base lg:text-2xl mb-2 lg:mb-4 text-right text-white drop-shadow-lg">
                 משרד העוסק בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי
@@ -54,7 +54,7 @@ export default function Hero() {
             <div className="hidden md:block">
               <h1 className="text-2xl sm:text-3xl lg:text-6xl font-bold mb-3 lg:mb-6 text-right text-white drop-shadow-lg">
                 קרן להגאני
-                <span className="block text-base sm:text-lg lg:text-3xl mt-2 lg:mt-4 font-light">משרד עו״ד מוביל לרשלנות רפואית</span>
+                <span className="block text-base sm:text-lg lg:text-3xl mt-2 lg:mt-4 font-light">משרד עו״ד מוביל לרשלנות רפואית ונזקי גוף</span>
               </h1>
               <p className="text-sm sm:text-base lg:text-2xl mb-2 lg:mb-4 text-right text-white drop-shadow-lg">
                 משרד העוסק בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי

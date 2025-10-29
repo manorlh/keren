@@ -39,7 +39,7 @@ export default function TermsPage() {
         <section>
           <h2 className="text-xl font-semibold mb-3 text-black">5. יצירת קשר</h2>
           <p className="text-black">
-            השימוש בטופס יצירת הקשר באתר אינו יוצר יחסי עורך דין-לקוח. יחסים אלו נוצרים רק לאחר פגישה והסכמה מפורשת בכתב.
+            השימוש בטופס יצירת הקשר באתר אינו יוצר יחסי עורכת דין-לקוח. יחסים אלו נוצרים רק לאחר פגישה והסכמה מפורשת בכתב.
           </p>
         </section>
 

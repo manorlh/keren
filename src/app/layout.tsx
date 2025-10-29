@@ -16,9 +16,9 @@ const rubik = Rubik({
 });
 
 export const metadata: Metadata = {
-  title: 'קרן להגאני - משרד עורכי דין | עורך דין רשלנות רפואית',
-  description: 'קרן להגאני - עורך דין מוביל לרשלנות רפואית ונזקי גוף. ייצוג מקצועי להשגת פיצוי מירבי. התקשרו: 054-564-5921',
-  keywords: 'קרן להגאני, עורך דין רשלנות רפואית, תביעת רשלנות רפואית, פיצוי רשלנות רפואית, עורך דין מומחה לרשלנות רפואית, עורך דין נזקי גוף, תביעות רשלנות רפואית, פיצויים, עורך דין תל אביב, keren lahagani, medical malpractice lawyer',
+  title: 'קרן להגאני - משרד עורכי דין | עורכת דין רשלנות רפואית ונזקי גוף',
+  description: 'קרן להגאני - עורכת דין מובילה לרשלנות רפואית ונזקי גוף. ייצוג מקצועי להשגת פיצוי מירבי. התקשרו: 054-564-5921',
+  keywords: 'קרן להגאני, עורכת דין רשלנות רפואית ונזקי גוף, תביעת רשלנות רפואית ונזקי גוף, פיצוי רשלנות רפואית ונזקי גוף, עורכת דין מומחית לרשלנות רפואית ונזקי גוף, עורכת דין נזקי גוף, תביעות רשלנות רפואית ונזקי גוף, פיצויים, עורכת דין תל אביב, keren lahagani, medical malpractice lawyer',
   metadataBase: new URL('https://www.klh-law.co.il'),
   icons: {
     icon: [
@@ -40,14 +40,14 @@ export const metadata: Metadata = {
     locale: 'he_IL',
     url: 'https://www.klh-law.co.il',
     siteName: 'קרן להגאני - משרד עורכי דין',
-    title: 'קרן להגאני - משרד עו״ד מוביל לרשלנות רפואית',
+    title: 'קרן להגאני - משרד עו״ד מוביל לרשלנות רפואית ונזקי גוף',
     description: 'משרד העוסק בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי ומימוש זכויותיכם',
     images: [
       {
         url: 'https://www.klh-law.co.il/images/lawyer1200-630-comp.jpg',
         width: 1200,
         height: 630,
-        alt: 'קרן להגאני - משרד עו״ד מוביל לרשלנות רפואית',
+        alt: 'קרן להגאני - משרד עו״ד מוביל לרשלנות רפואית ונזקי גוף',
         type: 'image/jpeg',
       }
     ],
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     site: '@kerenlahagani',
-    title: 'קרן להגאני - משרד עו״ד מוביל לרשלנות רפואית',
+    title: 'קרן להגאני - משרד עו״ד מוביל לרשלנות רפואית ונזקי גוף',
     description: 'משרד העוסק בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי ומימוש זכויותיכם',
     images: ['https://www.klh-law.co.il/images/lawyer.jpg'],
     creator: '@kerenlahagani',
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     canonical: 'https://www.klh-law.co.il'
   },
   other: {
-    'og:title': 'קרן להגאני - משרד עו״ד מוביל לרשלנות רפואית',
+    'og:title': 'קרן להגאני - משרד עו״ד מוביל לרשלנות רפואית ונזקי גוף',
     'og:description': 'משרד העוסק בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי.',
     'og:url': 'https://www.klh-law.co.il',
     'og:site_name': 'קרן להגאני - משרד עורכי דין',
@@ -75,7 +75,7 @@ export const metadata: Metadata = {
     'og:image:width': '1200',
     'og:image:height': '630',
     'og:image:type': 'image/jpeg',
-    'og:image:alt': 'קרן להגאני - משרד עו״ד מוביל לרשלנות רפואית',
+    'og:image:alt': 'קרן להגאני - משרד עו״ד מוביל לרשלנות רפואית ונזקי גוף',
     'og:logo':'https://www.klh-law.co.il/images/logo.webp',
   }
 };
@@ -105,7 +105,7 @@ export default async function RootLayout({
       "addressCountry": "IL"
     },
     "areaServed": "Israel",
-    "serviceType": ["רשלנות רפואית", "תביעת רשלנות רפואית", "פיצוי רשלנות רפואית", "עורך דין מומחה לרשלנות רפואית", "נזקי גוף", "תביעות פיצויים"],
+    "serviceType": ["רשלנות רפואית ונזקי גוף", "תביעת רשלנות רפואית ונזקי גוף", "פיצוי רשלנות רפואית ונזקי גוף", "עורכת דין מומחית לרשלנות רפואית ונזקי גוף", "נזקי גוף", "תביעות פיצויים"],
     "founder": {
       "@type": "Person",
       "name": "קרן להגאני"
