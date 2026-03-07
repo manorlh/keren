@@ -7,7 +7,7 @@ const MOBILE_HERO = {
   cropX: '50%',      // Crop: which part of image horizontally (0% = left edge, 50% = center, 100% = right).
   cropY: '26%',      // Crop: which part of image vertically (0% = top, 100% = bottom).
   screenX: '50%',    // Position on screen: horizontal (0% = left, 50% = center, 100% = right).
-  screenY: '80%',    // Position on screen: vertical (0% = top, 50% = center, 100% = bottom).
+  screenY: '78%',    // Position on screen: vertical (0% = top, 50% = center, 100% = bottom).
 } as const;
 
 // Hero title and text position (on the image). Use these to place the content block.
