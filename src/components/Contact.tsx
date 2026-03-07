@@ -23,16 +23,18 @@ export default function Contact() {
   const { contact, content } = contactConfig;
   return (
     <section className="flex flex-col md:flex-row-reverse bg-slate-50 min-h-screen" id="contact">
-      {/* Image Section */}
-      <div className="w-full md:w-2/5 h-[40vh] md:min-h-[500px] flex items-center justify-center bg-white">
-        <Image
-          src="/images/law-office.jpg"
-          alt="משרד עורכי דין"
-          width={800}
-          height={600}
-          className="w-auto h-full object-contain"
-          priority
-        />
+      {/* Image Section - stretches to section height on desktop, image vertically centered */}
+      <div className="w-full md:w-2/5 h-[40vh] md:h-auto flex items-center justify-center bg-white md:bg-slate-50 shrink-0 self-stretch">
+        <div className="h-full w-full min-h-0 flex items-center justify-center">
+          <Image
+            src="/images/law-office.jpg"
+            alt="משרד עורכי דין"
+            width={800}
+            height={600}
+            className="w-auto max-w-full max-h-[40vh] md:max-h-[70vh] object-contain object-center"
+            priority
+          />
+        </div>
       </div>
 
       {/* Content Section */}

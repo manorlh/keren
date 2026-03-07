@@ -59,6 +59,15 @@ export default function MobileNav() {
                 </li>
                 <li>
                   <a
+                    href="#testimonials"
+                    className="block text-gray-600 hover:text-primary"
+                    onClick={toggleMenu}
+                  >
+                    המלצות
+                  </a>
+                </li>
+                <li>
+                  <a
                     href="#contact"
                     className="inline-block bg-primary text-white px-6 py-2 rounded-md hover:bg-primary-dark transition-colors duration-300"
                     onClick={toggleMenu}
