@@ -4,6 +4,7 @@ import MobileNav from '@/components/MobileNav';
 import Footer from '@/components/Footer';
 import Link from "next/link";
 import type {Metadata} from 'next';
+import { getSEOExtraMeta } from '@/components/SEOHead';
 import AccessibilityWidget from '@/components/AccessibilityWidget';
 import {Analytics} from "@vercel/analytics/react"
 import {Toaster} from 'react-hot-toast';
@@ -83,7 +84,8 @@ export const metadata: Metadata = {
     'og:image:height': '630',
     'og:image:type': 'image/jpeg',
     'og:image:alt': 'קרן להגאני - משרד עו״ד מוביל לרשלנות רפואית ונזקי גוף',
-    'og:logo':'https://www.klh-law.co.il/images/logo.webp',
+    'og:logo': 'https://www.klh-law.co.il/images/logo.webp',
+    ...getSEOExtraMeta(),
   }
 };
 

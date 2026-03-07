@@ -1,6 +1,12 @@
-import Head from 'next/head';
+/**
+ * SEO extra meta tags for App Router.
+ * Export getSEOExtraMeta() and use it in layout.tsx metadata.other so these tags are emitted.
+ * (next/head is Pages Router only; App Router uses the metadata API.)
+ */
 
-interface SEOHeadProps {
+const BASE_URL = 'https://www.klh-law.co.il';
+
+export interface SEOHeadProps {
   title?: string;
   description?: string;
   keywords?: string;
@@ -8,56 +14,36 @@ interface SEOHeadProps {
   ogImage?: string;
 }
 
-export default function SEOHead({
-  title = 'קרן להגאני - עורכת דין רשלנות רפואית ונזקי גוף | ייצוג מקצועי לפיצויים',
-  description = 'קרן להגאני - עורכת דין מובילה לרשלנות רפואית ונזקי גוף. ייצוג מקצועי להשגת פיצוי מירבי. התקשרו: 054-564-5921',
-  keywords = 'קרן להגאני, עורכת דין רשלנות רפואית ונזקי גוף, תביעת רשלנות רפואית ונזקי גוף, פיצוי רשלנות רפואית ונזקי גוף, עורכת דין מומחית לרשלנות רפואית ונזקי גוף, עורכת דין נזקי גוף, תביעות רשלנות רפואית ונזקי גוף, פיצויים, עורכת דין תל אביב, keren lahagani, medical malpractice lawyer',
-  canonicalUrl = 'https://www.klh-law.co.il',
-  ogImage = 'https://www.klh-law.co.il/images/lawyer1200-630-comp.jpg'
-}: SEOHeadProps) {
-  return (
-    <Head>
-      <title>{title}</title>
-      <meta name="description" content={description} />
-      <meta name="keywords" content={keywords} />
-      <meta name="author" content="קרן להגאני" />
-      <meta name="robots" content="index, follow" />
-      <meta name="googlebot" content="index, follow" />
-      <meta name="language" content="Hebrew" />
-      <meta name="revisit-after" content="7 days" />
-      
-      {/* Canonical URL */}
-      <link rel="canonical" href={canonicalUrl} />
-      
-      {/* Open Graph */}
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:url" content={canonicalUrl} />
-      <meta property="og:type" content="website" />
-      <meta property="og:image" content={ogImage} />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
-      <meta property="og:site_name" content="קרן להגאני - משרד עורכי דין" />
-      <meta property="og:locale" content="he_IL" />
-      
-      {/* Twitter */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={ogImage} />
-      
-      {/* Additional SEO */}
-      <meta name="geo.region" content="IL" />
-      <meta name="geo.placename" content="תל אביב" />
-      <meta name="geo.position" content="32.0853;34.7818" />
-      <meta name="ICBM" content="32.0853, 34.7818" />
-      
-      {/* Business Information */}
-      <meta name="business:contact_data:street_address" content="יגאל אלון 94 (מגדל אלון 2)" />
-      <meta name="business:contact_data:locality" content="תל אביב" />
-      <meta name="business:contact_data:country_name" content="ישראל" />
-      <meta name="business:contact_data:phone_number" content="054-564-5921" />
-      <meta name="business:contact_data:email" content="keren@klh-law.co.il" />
-    </Head>
-  );
+const defaultProps: Required<SEOHeadProps> = {
+  title: 'קרן להגאני - עורכת דין רשלנות רפואית ונזקי גוף | ייצוג מקצועי לפיצויים',
+  description: 'קרן להגאני - עורכת דין מובילה לרשלנות רפואית ונזקי גוף. ייצוג מקצועי להשגת פיצוי מירבי. התקשרו: 054-564-5921',
+  keywords: 'קרן להגאני, עורכת דין רשלנות רפואית ונזקי גוף, תביעת רשלנות רפואית ונזקי גוף, פיצוי רשלנות רפואית ונזקי גוף, עורכת דין מומחית לרשלנות רפואית ונזקי גוף, עורכת דין נזקי גוף, תביעות רשלנות רפואית ונזקי גוף, פיצויים, עורכת דין תל אביב, keren lahagani, medical malpractice lawyer',
+  canonicalUrl: BASE_URL,
+  ogImage: `${BASE_URL}/images/lawyer1200-630-comp.jpg`,
+};
+
+/**
+ * Returns meta tag key-value pairs for Next.js metadata.other.
+ * Use in layout: metadata = { other: { ...existing, ...getSEOExtraMeta() } }
+ */
+export function getSEOExtraMeta(props: SEOHeadProps = {}): Record<string, string> {
+  const { canonicalUrl, ogImage } = { ...defaultProps, ...props };
+  return {
+    author: 'קרן להגאני',
+    robots: 'index, follow',
+    googlebot: 'index, follow',
+    language: 'Hebrew',
+    'revisit-after': '7 days',
+    'geo.region': 'IL',
+    'geo.placename': 'תל אביב',
+    'geo.position': '32.0853;34.7818',
+    ICBM: '32.0853, 34.7818',
+    'business:contact_data:street_address': 'יגאל אלון 94 (מגדל אלון 2)',
+    'business:contact_data:locality': 'תל אביב',
+    'business:contact_data:country_name': 'ישראל',
+    'business:contact_data:phone_number': '054-564-5921',
+    'business:contact_data:email': 'keren@klh-law.co.il',
+  };
 }
+
+export { defaultProps as defaultSEOHeadProps };
