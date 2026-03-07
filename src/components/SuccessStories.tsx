@@ -36,16 +36,16 @@ export default function SuccessStories({ articles }: SuccessStoriesProps) {
   const displayedArticles = showAll ? articles : articles.slice(0, initialArticleCount);
   
   return (
-    <section className="py-20 bg-white" id="success-stories" aria-labelledby="success-stories-heading">
+    <section className="py-16 md:py-20 bg-slate-50" id="success-stories" aria-labelledby="success-stories-heading">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 id="success-stories-heading" className="text-4xl font-bold text-gray-900 mb-4">סיפורי הצלחה</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+        <div className="text-center mb-12 md:mb-16">
+          <h2 id="success-stories-heading" className="text-3xl md:text-4xl font-bold text-primary mb-4">סיפורי הצלחה</h2>
+          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
             מקרים בהם סייענו ללקוחותינו לקבל את הפיצוי המגיע להם
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {displayedArticles.map((article) => {
             // Format the publication date
             const formattedDate = article.fields.publishedDate 
@@ -58,7 +58,7 @@ export default function SuccessStories({ articles }: SuccessStoriesProps) {
             return (
               <article 
                 key={article.sys.id}
-                className="bg-white rounded-lg shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg h-full border border-gray-100"
+                className="group bg-white rounded-lg border border-accent overflow-hidden shadow-[0_0_0_1px_#c9a962,0_0_16px_rgba(201,169,98,0.35)] transition-all duration-300 h-full text-right"
                 itemScope 
                 itemType="https://schema.org/Article"
               >
@@ -70,14 +70,14 @@ export default function SuccessStories({ articles }: SuccessStoriesProps) {
                 {hasTags && <meta itemProp="keywords" content={article.fields.tags.join(', ')} />}
                 
                 <div className="p-6 flex flex-col h-full">
-                  <div className="border-r-4 border-red-500 pr-3 mb-4">
-                    <h3 className="text-xl font-semibold text-gray-900" itemProp="name">{article.fields.title}</h3>
+                  <div className="border-r-4 border-accent pr-3 mb-4">
+                    <h3 className="text-xl font-semibold text-accent" itemProp="name">{article.fields.title}</h3>
                   </div>
                   
                   {/* Display up to 2 tags for visual interest */}
                   {hasTags && (
                     <div className="flex flex-wrap gap-1 mb-3">
-                      <TagIcon className="h-4 w-4 text-gray-500" aria-hidden="true" />
+                      <TagIcon className="h-4 w-4 text-sky-500" aria-hidden="true" />
                       {article.fields.tags.slice(0, 2).map((tag) => (
                         <span 
                           key={tag} 
@@ -97,11 +97,11 @@ export default function SuccessStories({ articles }: SuccessStoriesProps) {
                   <div className="flex justify-between items-center mt-auto pt-4 border-t border-gray-100">
                     <Link 
                       href={`/articles/${article.sys.id}`}
-                      className="text-red-600 font-medium hover:text-red-700 transition-colors flex items-center"
+                      className="text-primary font-medium hover:text-accent transition-colors flex items-center"
                       aria-label={`קרא עוד על ${article.fields.title}`}
                     >
                       <span>קרא עוד</span>
-                      <ArrowLeftIcon className="h-4 w-4 mr-1" aria-hidden="true" />
+                      <ArrowLeftIcon className="h-4 w-4 mr-1 text-primary" aria-hidden="true" />
                     </Link>
                     {formattedDate && (
                       <time 
@@ -109,7 +109,7 @@ export default function SuccessStories({ articles }: SuccessStoriesProps) {
                         itemProp="datePublished" 
                         dateTime={article.fields.publishedDate}
                       >
-                        <CalendarIcon className="h-4 w-4 ml-1" aria-hidden="true" />
+                        <CalendarIcon className="h-4 w-4 ml-1 text-amber-600" aria-hidden="true" />
                         {formattedDate}
                       </time>
                     )}
@@ -124,7 +124,7 @@ export default function SuccessStories({ articles }: SuccessStoriesProps) {
           <div className="mt-12 text-center">
             <button
               onClick={() => setShowAll(true)}
-              className="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-6 rounded-md transition-colors duration-300"
+              className="bg-primary hover:bg-primary-dark text-white font-medium py-2 px-6 rounded-md transition-colors duration-300"
               aria-expanded={showAll}
               aria-controls="success-stories"
             >

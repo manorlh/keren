@@ -1,5 +1,5 @@
 import './globals.css';
-import {Rubik} from 'next/font/google';
+import { Rubik, Heebo } from 'next/font/google';
 import MobileNav from '@/components/MobileNav';
 import Footer from '@/components/Footer';
 import Link from "next/link";
@@ -13,6 +13,13 @@ import ScrollToTopButton from '@/components/ScrollToTopButton';
 const rubik = Rubik({
   subsets: ['latin', 'hebrew'],
   weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-rubik',
+});
+
+const heebo = Heebo({
+  subsets: ['latin', 'hebrew'],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: '--font-heebo',
 });
 
 export const metadata: Metadata = {
@@ -123,26 +130,25 @@ export default async function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body className={rubik.className}>
+      <body className={`${rubik.className} ${heebo.variable} font-sans`}>
         <Toaster />
         <Analytics/>
         <AccessibilityWidget />
         <WhatsAppButton />
         <ScrollToTopButton />
-        <header className="fixed w-full bg-white/90 backdrop-blur-sm z-50 shadow-sm">
+        <header className="fixed w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm border-b border-gray-100">
           <nav className="container mx-auto px-6 py-3">
             <div className="flex items-center justify-between">
               <Link href="/" className="flex items-center">
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/images/logo.webp" alt="קרן להגאני - משרד עורכי דין" className="h-10 w-auto" />
               </Link>
               <div className="hidden md:flex items-center gap-8">
-                <a href="#about" className="text-gray-600 hover:text-gray-900">אודות</a>
-                <a href="#practice-areas" className="text-gray-600 hover:text-gray-900">תחומי עיסוק</a>
-                  {/* <a href="#success-stories" className="text-gray-600 hover:text-gray-900">סיפורי הצלחה</a> */}
+                <a href="#about" className="text-gray-600 hover:text-primary transition-colors">אודות</a>
+                <a href="#practice-areas" className="text-gray-600 hover:text-primary transition-colors">תחומי עיסוק</a>
                 <a
                   href="#contact"
-                  className="bg-gray-900 text-white px-6 py-2 rounded-md hover:bg-black transition-colors duration-300"
+                  className="bg-primary text-white px-6 py-2 rounded-md hover:bg-primary-dark transition-colors duration-300"
                 >
                   צור קשר
                 </a>

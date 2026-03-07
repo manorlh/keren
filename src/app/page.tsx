@@ -1,7 +1,10 @@
 import Hero from '@/components/Hero';
+import StatsBar from '@/components/StatsBar';
 import About from '@/components/About';
 import PracticeAreas from '@/components/PracticeAreas';
 import SuccessStories from '@/components/SuccessStories';
+import WhyChooseUs from '@/components/WhyChooseUs';
+import Testimonials from '@/components/Testimonials';
 import Contact from '@/components/Contact';
 import { getArticles, Article } from '@/lib/contentful';
 import { Metadata } from 'next';
@@ -46,7 +49,8 @@ export default async function Home() {
       <About />
       <PracticeAreas />
       {!contentfulError && articles.length > 0 && <SuccessStories articles={articles} />}
-      {/*<WhyChooseUs />*/}
+      <WhyChooseUs />
+      <Testimonials />
       <Contact />
     </main>
   );

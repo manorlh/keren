@@ -147,7 +147,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-gray-900 text-white py-2 px-4 rounded-md text-base font-semibold hover:bg-black transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="w-full bg-primary text-white py-2 px-4 rounded-md text-base font-semibold hover:bg-primary-dark transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isSubmitting ? 'שולח...' : 'שלח הודעה'}
         </button>

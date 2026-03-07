@@ -18,7 +18,7 @@ export default function MobileNav() {
     <div className="md:hidden">
       <button
         onClick={toggleMenu}
-        className="p-2 text-gray-600 hover:text-gray-900"
+        className="p-2 text-gray-600 hover:text-primary transition-colors"
         aria-label="תפריט"
       >
         {isOpen ? (
@@ -42,7 +42,7 @@ export default function MobileNav() {
                 <li>
                   <a
                     href="#about"
-                    className="block text-gray-600 hover:text-gray-900"
+                    className="block text-gray-600 hover:text-primary"
                     onClick={toggleMenu}
                   >
                     אודות
@@ -51,25 +51,16 @@ export default function MobileNav() {
                 <li>
                   <a
                     href="#practice-areas"
-                    className="block text-gray-600 hover:text-gray-900"
+                    className="block text-gray-600 hover:text-primary"
                     onClick={toggleMenu}
                   >
                     תחומי עיסוק
                   </a>
                 </li>
-                  {/* <li>
-                    <a
-                      href="#success-stories"
-                      className="block text-gray-600 hover:text-gray-900"
-                      onClick={toggleMenu}
-                    >
-                      סיפורי הצלחה
-                    </a>
-                  </li> */}
                 <li>
                   <a
                     href="#contact"
-                    className="inline-block bg-gray-900 text-white px-6 py-2 rounded-md hover:bg-black transition-colors duration-300"
+                    className="inline-block bg-primary text-white px-6 py-2 rounded-md hover:bg-primary-dark transition-colors duration-300"
                     onClick={toggleMenu}
                   >
                     צור קשר

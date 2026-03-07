@@ -24,52 +24,48 @@ const reasons = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-20 bg-gray-900 text-white" id="why-choose-us">
+    <section className="py-16 md:py-20 bg-primary text-white" id="why-choose-us">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto"
+          className="max-w-4xl mx-auto text-center"
         >
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">למה לבחור בנו</h2>
-            <p className="text-xl text-gray-300">
-              משרדנו מתמחה בתביעות רשלנות רפואית ונזקי גוף, עם צוות מקצועי המעניק מענה מקיף לכל מקרה
-            </p>
-          </div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">למה לבחור בנו</h2>
+          <p className="text-lg md:text-xl text-white/85 mb-12 md:mb-16">
+            משרדנו מתמחה בתביעות רשלנות רפואית ונזקי גוף, עם צוות מקצועי המעניק מענה מקיף לכל מקרה
+          </p>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-6 md:gap-8 text-right">
             {reasons.map((reason, index) => (
               <motion.div
                 key={reason.title}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
                 viewport={{ once: true }}
-                className="flex items-start space-x-4"
+                className="flex items-start gap-3"
               >
-                <CheckCircleIcon className="h-6 w-6 text-gray-400 flex-shrink-0 mt-1" />
+                <CheckCircleIcon className="h-6 w-6 text-accent-light flex-shrink-0 mt-0.5" aria-hidden />
                 <div>
-                  <h3 className="text-xl font-semibold mb-2">{reason.title}</h3>
-                  <p className="text-gray-300">{reason.description}</p>
+                  <h3 className="text-lg font-semibold mb-1">{reason.title}</h3>
+                  <p className="text-white/85 text-sm md:text-base">{reason.description}</p>
                 </div>
               </motion.div>
             ))}
           </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+          <motion.p
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.3 }}
             viewport={{ once: true }}
-            className="mt-16 text-center"
+            className="mt-12 md:mt-16 text-lg md:text-xl font-light text-white/80"
           >
-            <p className="text-2xl font-light italic text-gray-300">
-              מובילים בתחום תביעות הרשלנות הרפואית בישראל
-            </p>
-          </motion.div>
+            מובילים בתחום תביעות הרשלנות הרפואית בישראל
+          </motion.p>
         </motion.div>
       </div>
     </section>

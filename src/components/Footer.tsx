@@ -1,23 +1,23 @@
 import Link from 'next/link';
-import contactConfig from '../config/contact.json';
+import contactConfig from '@/config/contact.json';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white py-12" role="contentinfo">
+    <footer className="bg-primary text-white py-12" role="contentinfo">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="text-right">
             <h3 className="text-lg font-semibold mb-4">צור קשר</h3>
             <div className="space-y-2">
               {contactConfig.contact.phones.map((phone, index) => (
-                <p key={index} className="flex items-center gap-2 hover:text-gray-300">
+                <p key={index} className="flex items-center gap-2">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
                   {phone}
                 </p>
               ))}
-              <p className="flex items-center gap-2 hover:text-gray-300">
+              <p className="flex items-center gap-2">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
@@ -36,15 +36,16 @@ export default function Footer() {
                 </svg>
                 {contactConfig.contact.address}
               </p>
+              <p className="text-sm text-white/90 mt-3">משרדנו זמין ללקוחות מכל רחבי הארץ</p>
             </div>
           </div>
 
           <nav className="text-right" aria-label="ניווט מהיר">
             <h3 className="text-lg font-semibold mb-4">קישורים מהירים</h3>
             <ul className="space-y-2">
-              <li><a href="#about" className="hover:text-gray-300">אודות</a></li>
-              <li><a href="#practice-areas" className="hover:text-gray-300">תחומי עיסוק</a></li>
-              <li><a href="#contact" className="hover:text-gray-300">צור קשר</a></li>
+              <li><a href="#about" className="hover:text-accent-light transition-colors">אודות</a></li>
+              <li><a href="#practice-areas" className="hover:text-accent-light transition-colors">תחומי עיסוק</a></li>
+              <li><a href="#contact" className="hover:text-accent-light transition-colors">צור קשר</a></li>
             </ul>
           </nav>
 
@@ -52,17 +53,17 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">מידע משפטי</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/terms" className="hover:text-gray-300">
+                <Link href="/terms" className="hover:text-accent-light transition-colors">
                   תנאי שימוש
                 </Link>
               </li>
               <li>
-                <Link href="/privacy" className="hover:text-gray-300">
+                <Link href="/privacy" className="hover:text-accent-light transition-colors">
                   מדיניות פרטיות
                 </Link>
               </li>
               <li>
-                <Link href="/accessibility" className="hover:text-gray-300">
+                <Link href="/accessibility" className="hover:text-accent-light transition-colors">
                   הצהרת נגישות
                 </Link>
               </li>
