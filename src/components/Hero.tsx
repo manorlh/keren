@@ -18,15 +18,15 @@ const HERO_CONTENT = {
   maxWidth: 'min(90vw, 40rem)', // Max width of the text block (e.g. '28rem', '500px').
 } as const;
 
-// "לייעוץ ראשוני" button position (absolute, bottom-left of the text row). Increase bottom to push up.
-const HERO_BUTTON = {
-  left: '0',         // Distance from left of content (e.g. '0', '1rem').
-  bottom: '1.5rem', // Distance from bottom of row (increase to push button up, e.g. '1.5rem', '2rem').
-} as const;
-
 // Hero container height: mobile uses HERO_HEIGHT_MOBILE; from md up uses aspect ratio.
-const HERO_HEIGHT_MOBILE = '36vh';   // Mobile only (e.g. '60vh', '70vh', '80vh', '400px').
+const HERO_HEIGHT_MOBILE = '315px';   // Mobile only (e.g. '60vh', '70vh', '80vh', '400px').
 const HERO_ASPECT_RATIO = 16 / 10;   // Desktop: width/height (e.g. 16/10, 3/2, 4/3).
+
+// CTA button: position absolute within the section. Separate values for mobile and desktop (md and up).
+const HERO_BUTTON = {
+  mobile:  { left: '10px', bottom: '10px' },
+  desktop: { left: '60px', bottom: '60px' },
+} as const;
 
 export default function Hero() {
   const mobileHeroStyle = {
@@ -50,7 +50,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative overflow-hidden" style={{ ['--hero-height-mobile' as string]: HERO_HEIGHT_MOBILE }}>
+    <section id="hero-section" className="relative overflow-hidden" style={{ ['--hero-height-mobile' as string]: HERO_HEIGHT_MOBILE }}>
       <style dangerouslySetInnerHTML={{ __html: `
         .hero-size {
           height: var(--hero-height-mobile);
@@ -59,6 +59,16 @@ export default function Hero() {
           .hero-size {
             height: auto;
             aspect-ratio: ${HERO_ASPECT_RATIO};
+          }
+        }
+        #hero-section {
+          --hero-cta-left: ${HERO_BUTTON.mobile.left};
+          --hero-cta-bottom: ${HERO_BUTTON.mobile.bottom};
+        }
+        @media (min-width: 768px) {
+          #hero-section {
+            --hero-cta-left: ${HERO_BUTTON.desktop.left};
+            --hero-cta-bottom: ${HERO_BUTTON.desktop.bottom};
           }
         }
       `}} />
@@ -84,7 +94,16 @@ export default function Hero() {
       {/* Mobile Gradient */}
       <div className="absolute bottom-0 left-0 right-0 h-[50vh] bg-gradient-to-t from-black/90 via-black/50 to-transparent md:hidden z-10" />
 
-      {/* Content - position via HERO_CONTENT (x, y, align, maxWidth). Button at bottom left of this container. */}
+      {/* CTA button: absolute within section (position via HERO_BUTTON; uses CSS vars so it stays relative to #hero-section) */}
+      <Link
+        href="#contact"
+        className="absolute z-20 bg-primary text-white px-3 sm:px-4 lg:px-8 py-1.5 sm:py-2 lg:py-4 rounded-md text-sm lg:text-lg font-semibold hover:bg-primary-dark transition-colors duration-300 backdrop-blur-sm shrink-0 border border-accent shadow-[0_0_0_1px_#c9a962,0_0_16px_rgba(201,169,98,0.5)] hover:shadow-[0_0_0_1px_#c9a962,0_0_20px_rgba(201,169,98,0.6)]"
+        style={{ left: 'var(--hero-cta-left)', bottom: 'var(--hero-cta-bottom)' }}
+      >
+        לייעוץ ראשוני ללא עלות
+      </Link>
+
+      {/* Content - position via HERO_CONTENT (x, y, align, maxWidth). */}
       <div
         className="absolute z-20 px-4 md:px-6 pb-12 md:pb-0 flex flex-col items-start"
         dir="ltr"
@@ -96,26 +115,17 @@ export default function Hero() {
           width: 'max-content',
         }}
       >
-        <div className="w-full mt-[14rem]">
+        <div className="w-full mt-[12rem]">
           <h1 className={`text-2xl sm:text-3xl lg:text-6xl font-bold mb-3 lg:mb-6 text-white drop-shadow-lg font-[family-name:var(--font-heebo)] ${HERO_CONTENT.align === 'right' ? 'text-right' : 'text-left'}`}>
             קרן להגאני
             <span className="block text-base sm:text-lg lg:text-3xl mt-2 lg:mt-4 font-bold text-accent-light">משרד עו״ד מוביל לרשלנות רפואית ונזקי גוף</span>
           </h1>
-          <p className={`text-sm sm:text-base lg:text-2xl lg:mb-4 text-white drop-shadow-lg ${HERO_CONTENT.align === 'right' ? 'text-right' : 'text-left'}`}>
+          <p className={`text-sm sm:text-base lg:text-2xl text-white drop-shadow-lg ${HERO_CONTENT.align === 'right' ? 'text-right' : 'text-left'}`}>
             משרד העוסק בייצוג נפגעי רשלנות רפואית ונזקי גוף להשגת פיצוי מירבי
           </p>
-          <div className="relative flex flex-wrap justify-end items-center gap-4 mb-4 lg:mb-8 min-h-[3rem]" dir="ltr">
-            <Link
-              href="#contact"
-              className="absolute left-0 bottom-0 bg-primary text-white px-3 sm:px-4 lg:px-8 py-1.5 sm:py-2 lg:py-4 rounded-md text-sm lg:text-lg font-semibold hover:bg-primary-dark transition-colors duration-300 backdrop-blur-sm shrink-0"
-              style={{ left: HERO_BUTTON.left, bottom: HERO_BUTTON.bottom }}
-            >
-              לייעוץ ראשוני ללא עלות
-            </Link>
-            <p className={`text-xs sm:text-sm lg:text-xl text-gray-100 font-light drop-shadow-lg ${HERO_CONTENT.align === 'right' ? 'text-right' : 'text-left'}`}>
-              הקול שלכם בבית משפט
-            </p>
-          </div>
+          <p className={`text-xs sm:text-sm lg:text-xl text-gray-100 font-light drop-shadow-lg mt-2 ${HERO_CONTENT.align === 'right' ? 'text-right' : 'text-left'}`}>
+            הקול שלכם בבית משפט
+          </p>
         </div>
       </div>
     </section>
