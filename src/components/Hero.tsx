@@ -15,7 +15,7 @@ const HERO_CONTENT = {
   x: '8%',           // Horizontal: distance from left (e.g. '8%', '2rem', '24px').
   y: '51%',          // Vertical: position from top (e.g. '50%' = middle, '30%' = higher, '70%' = lower).
   align: 'right' as 'left' | 'right',  // Text alignment: 'left' | 'right'.
-  maxWidth: 'min(90vw, 36rem)', // Max width of the text block (e.g. '28rem', '500px').
+  maxWidth: 'min(90vw, 40rem)', // Max width of the text block (e.g. '28rem', '500px').
 } as const;
 
 // "לייעוץ ראשוני" button position (absolute, bottom-left of the text row). Increase bottom to push up.

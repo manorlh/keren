@@ -83,7 +83,7 @@ export default function PracticeAreas() {
           {practices.map(({ title, description, icon: Icon }) => (
             <div
               key={title}
-              className="group bg-white p-6 md:p-8 rounded-lg border border-accent shadow-[0_0_0_1px_#c9a962,0_0_16px_rgba(201,169,98,0.35)] transition-all duration-300 text-right"
+              className="group bg-white p-6 md:p-8 rounded-lg border border-accent shadow-[0_0_0_1px_#c9a962,0_0_16px_rgba(201,169,98,0.35)] transition-all duration-300 text-right [&:last-child:nth-child(odd)]:col-span-2 md:[&:last-child:nth-child(odd)]:col-span-1"
             >
               <div className="w-14 h-14 rounded-lg flex items-center justify-center mb-4 bg-accent/20 text-accent">
                 <Icon sx={{ fontSize: '2.5rem', color: 'currentColor' }} />

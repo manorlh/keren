@@ -1,8 +1,11 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { XMarkIcon } from '@heroicons/react/24/outline';
 import testimonialsConfig from '@/config/testimonials.json';
+
+const AUTO_ADVANCE_MS = 3000;
 
 const ChevronLeft = () => (
   <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
@@ -15,11 +18,19 @@ const ChevronRight = () => (
   </svg>
 );
 
+const cardBaseClass =
+  'relative w-full max-w-sm md:max-w-md mx-auto rounded-lg overflow-hidden border border-accent shadow-[0_0_0_1px_#c9a962,0_0_16px_rgba(201,169,98,0.35)] bg-slate-50 aspect-[3/4] max-h-[500px] cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2';
+
 export default function Testimonials() {
   const { recommendations } = testimonialsConfig as { recommendations: { src: string; alt: string }[] };
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
   const [lightboxAlt, setLightboxAlt] = useState('');
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [autoAdvanceStopped, setAutoAdvanceStopped] = useState(false);
+
+  const n = recommendations.length;
+  const current = recommendations[currentIndex] ?? recommendations[0];
+  const currentAlt = current?.alt || `המלצת לקוח ${currentIndex + 1}`;
 
   const openLightbox = (src: string, alt: string) => {
     setLightboxSrc(src);
@@ -30,21 +41,32 @@ export default function Testimonials() {
     setLightboxSrc(null);
   };
 
-  const scrollStep = () => {
-    if (typeof window === 'undefined') return 0;
-    const vw = Math.min(window.innerWidth * 0.85, 400);
-    return vw + 16;
+  const goPrev = () => {
+    setAutoAdvanceStopped(true);
+    setCurrentIndex((i) => (i - 1 + n) % n);
   };
 
-  const scrollPrev = () => {
-    if (!scrollRef.current) return;
-    scrollRef.current.scrollBy({ left: -scrollStep(), behavior: 'smooth' });
+  const goNext = () => {
+    setAutoAdvanceStopped(true);
+    setCurrentIndex((i) => (i + 1) % n);
   };
 
-  const scrollNext = () => {
-    if (!scrollRef.current) return;
-    scrollRef.current.scrollBy({ left: scrollStep(), behavior: 'smooth' });
-  };
+  // Preload all recommendation images on mount
+  useEffect(() => {
+    recommendations.forEach(({ src }) => {
+      const img = new window.Image();
+      img.src = src;
+    });
+  }, [recommendations]);
+
+  // Replace card every 3s; pause when lightbox open or user used arrows
+  useEffect(() => {
+    if (lightboxSrc !== null || autoAdvanceStopped) return;
+    const id = setInterval(() => {
+      setCurrentIndex((i) => (i + 1) % n);
+    }, AUTO_ADVANCE_MS);
+    return () => clearInterval(id);
+  }, [lightboxSrc, autoAdvanceStopped, n]);
 
   return (
     <section className="py-16 md:py-20 bg-white" id="testimonials">
@@ -56,65 +78,79 @@ export default function Testimonials() {
           </p>
         </div>
 
-        {/* Hint + arrows on mobile only */}
-        <div className="flex sm:hidden items-center justify-center gap-4 mb-4">
-          <button
-            type="button"
-            onClick={scrollPrev}
-            className="p-2 rounded-full bg-slate-100 text-primary hover:bg-accent/20 hover:text-accent transition-colors shrink-0"
-            aria-label="המלצה קודמת"
-          >
-            <ChevronRight />
-          </button>
-          <p className="text-sm text-gray-500">גללו או השתמשו בחצים למעבר בין ההמלצות</p>
-          <button
-            type="button"
-            onClick={scrollNext}
-            className="p-2 rounded-full bg-slate-100 text-primary hover:bg-accent/20 hover:text-accent transition-colors shrink-0"
-            aria-label="המלצה הבאה"
-          >
-            <ChevronLeft />
-          </button>
-        </div>
-
-        <div
-          ref={scrollRef}
-          className="flex sm:grid sm:grid-cols-2 overflow-x-auto sm:overflow-visible snap-x snap-mandatory sm:snap-none gap-4 sm:gap-6 md:gap-8 max-w-5xl mx-auto pb-2 scroll-smooth"
-        >
-          {recommendations.map(({ src, alt }, index) => (
+        {/* Single card that replaces every 3s (all viewports) */}
+        <div className="flex flex-col items-center">
+          <div className="flex items-center justify-center gap-4 mb-4">
             <button
-              key={index}
               type="button"
-              onClick={() => openLightbox(src, alt || `המלצת לקוח ${index + 1}`)}
-              className="relative flex-shrink-0 w-[85vw] sm:w-auto rounded-lg overflow-hidden border border-accent shadow-[0_0_0_1px_#c9a962,0_0_16px_rgba(201,169,98,0.35)] bg-slate-50 aspect-[3/4] max-h-[500px] cursor-pointer focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 snap-center"
+              onClick={goPrev}
+              className="p-2 rounded-full bg-slate-100 text-primary hover:bg-accent/20 hover:text-accent transition-colors shrink-0"
+              aria-label="המלצה קודמת"
+            >
+              <ChevronRight />
+            </button>
+            <p className="text-sm text-gray-500">השתמשו בחצים למעבר בין ההמלצות</p>
+            <button
+              type="button"
+              onClick={goNext}
+              className="p-2 rounded-full bg-slate-100 text-primary hover:bg-accent/20 hover:text-accent transition-colors shrink-0"
+              aria-label="המלצה הבאה"
+            >
+              <ChevronLeft />
+            </button>
+          </div>
+          <div className="w-full max-w-sm md:max-w-md mx-auto">
+            <button
+              type="button"
+              key={currentIndex}
+              onClick={() => openLightbox(current.src, currentAlt)}
+              className={`${cardBaseClass} animate-fade-in-fast`}
             >
               <Image
-                src={src}
-                alt={alt || `המלצת לקוח ${index + 1}`}
+                src={current.src}
+                alt={currentAlt}
                 fill
                 className="object-contain object-center"
-                sizes="(max-width: 640px) 100vw, 50vw"
+                sizes="(max-width: 768px) 100vw, 28rem"
               />
             </button>
-          ))}
+          </div>
         </div>
       </div>
 
-      {/* Lightbox: full resolution on click */}
+      {/* Lightbox */}
       {lightboxSrc && (
-        <button
-          type="button"
-          onClick={closeLightbox}
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 focus:outline-none"
-          aria-label="סגור"
+        <div
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-label="תצוגה מלאה של המלצה"
         >
-          <img
-            src={lightboxSrc}
-            alt={lightboxAlt}
-            className="max-w-full max-h-[90vh] w-auto h-auto object-contain"
-            onClick={(e) => e.stopPropagation()}
+          <button
+            type="button"
+            onClick={closeLightbox}
+            className="absolute inset-0 cursor-default"
+            aria-hidden
           />
-        </button>
+          <button
+            type="button"
+            onClick={closeLightbox}
+            className="absolute top-4 right-4 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors focus:outline-none focus:ring-2 focus:ring-white z-20"
+            aria-label="סגור"
+          >
+            <XMarkIcon className="h-8 w-8" aria-hidden />
+          </button>
+          <div
+            className="relative z-10 max-w-full max-h-[90vh] flex items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={lightboxSrc}
+              alt={lightboxAlt}
+              className="max-w-full max-h-[90vh] w-auto h-auto object-contain"
+            />
+          </div>
+        </div>
       )}
     </section>
   );

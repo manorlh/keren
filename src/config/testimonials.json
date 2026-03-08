@@ -19,7 +19,7 @@
   "recommendations": [
     { "src": "/recommendations/recommendation1.jpg", "alt": "" },
     { "src": "/recommendations/recommendation2.jpg", "alt": "" },
-    { "src": "/recommendations/recommendation3.png", "alt": "" },
-    { "src": "/recommendations/recommendation4.png", "alt": "" }
+    { "src": "/recommendations/recommendation3.jpg", "alt": "" },
+    { "src": "/recommendations/recommendation4.jpg", "alt": "" }
   ]
 }
